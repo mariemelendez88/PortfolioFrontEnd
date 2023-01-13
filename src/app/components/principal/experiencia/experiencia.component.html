@@ -1,0 +1,31 @@
+<!-- .............Inicio Experiencia................ -->
+<section id="experiencia" class="experiencia mt-5">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="titulo-exp">
+                <h1 class="text-center linea-exp">EXPERIENCIA</h1>
+            </div>
+            <div class="mt-3 mb-2 caja-exp">
+                <ul>
+                    <div *ngFor = "let experiencia of experiencias">
+                        <li class="list-group-item mt-5">
+                            <div class="container row">
+                                <div class="col-4 mt-2 text-center">
+                                    <a [href]="experiencia.link_instit" class="col-3 text-center" target="_blank">
+                                        <img [src]="experiencia.logo" class="logo-exp" width="70rem">
+                                    </a>
+                                </div>
+                                <div class="col">
+                                    <h3>{{experiencia.puesto}} ({{experiencia.fecha_inicio}}-{{experiencia.fecha_fin}})</h3>
+                                    <h4>{{experiencia.instit}}</h4>
+                                    <p>{{experiencia.descripcion}}</p>
+                                </div>
+                            </div>
+                        </li>
+                    </div>
+                </ul>
+            </div>
+        </div>
+    </div>
+<!-- ..............Fin Experiencia.................. -->
+</section>

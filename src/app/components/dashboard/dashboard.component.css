@@ -1,0 +1,24 @@
+/* ...............Inicio de Panel*/
+.panel{
+    margin-top: 4rem;
+}
+
+.boton{
+    color: #ffffff;
+    background-color: #00378a;
+    border-color: #ffffff;
+    border-width: 1rem;
+    padding: 5rem;
+    border-radius: 1rem;
+}
+.caja{
+    color: #ffffff;
+    width: 12rem;
+    height: 12rem;
+    background-color: #00378a;
+    border-color: #ffffff;
+    border-width: 1rem;
+    border-radius: 1rem;
+    margin: 1rem;
+}
+/* ...............Fin de Panel*/
