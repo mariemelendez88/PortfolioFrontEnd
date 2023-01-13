@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/dc4c242f43.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="../assets/css/styles2.css">
+</head>
+<body id="home">
+    <header>
+<!-- ...............Inicio de Navbar -->
+        <nav class="navbar navbar-nav bg-secondary">
+            <div class="container-fluid">
+<!-- ...............Inicio de Logo Argentina Programa -->
+                <div class="col-2">
+                    <a class="navbar-brand" href="https://argentinaprograma.inti.gob.ar/" target="_blank">
+                        <img src="../assets/img/AP-logo.png" alt="Logo Argentina Programa" width="100%">
+                    </a>
+                </div>
+<!-- ...............Fin de Logo Argentina Programa -->
+<!-- ...............Inicio de redes sociales y login-->
+                <ul class="list-group list-group-horizontal">
+                    <li class="list-group-item"><a href="https://github.com/mariemelendez88?tab=repositories" target="_blank"><i class="fa-brands fa-github fa-xl text-white"></i></a></li>
+                    <li class="list-group-item"><a href="https://www.linkedin.com/in/mariemdeveloper/" target="_blank"><i class="fa-brands fa-linkedin fa-xl text-white"></i></a></li>
+                    <li class="list-group-item">
+                        <i class="fa-solid fa-right-from-bracket fa-xl text-white" type="button"data-bs-toggle="modal" data-bs-target="#ModalLogout"></i>    
+                    </li>
+                </ul>
+<!-- ...............Fin de redes sociales y login-->
+            </div>
+        </nav>  
+<!-- ...............Fin de Navbar -->
+
+<!-- ...............Inicio de Modal para Logout -->
+        <div class="modal fade" id="ModalLogout" tabindex="-1" aria-labelledby="ModalLogout" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Logout</h4>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>¿Está seguro que desea salir del Dashboard?</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Volver</button>
+                        <button type="button" class="btn btn-primary">Salir</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+<!-- ...............Fin de Modal para Logout -->
+    </header>
+
+<!-- ...............Inicio de Dashboard -->
+    <main>
+        <section id="panel">
+            <div class="container text-center">
+                <div class="row g-lg-3">
+                    <div class="col panel">
+                        <button type="button" class="caja" data-bs-toggle="modal" data-bs-target="#ModalAcercade">
+                            <i class="fa-solid fa-user-gear fa-2x"></i>
+                            <h4><br>ACERCA DE MI</h4>
+                        </button>
+                    </div>
+                    <div class="col panel">
+                        <button type="button" class="caja" data-bs-toggle="modal" data-bs-target="#ModalBanner">
+                            <div><i class="fa-solid fa-file-image fa-2x"></i></div>
+                            <h4><br>BANNER</h4>
+                        </button>
+                    </div>
+                    <div class="col panel">
+                        <button type="button" class="caja" data-bs-toggle="modal" data-bs-target="#ModalEstudios">
+                            <div><i class="fa-solid fa-book fa-2x"></i></div>
+                            <h4><br>EDUCACIÓN</h4>
+                        </button>
+                    </div>
+                    <div class="col panel">
+                        <button type="button" class="caja" data-bs-toggle="modal" data-bs-target="#ModalExperiencia">
+                            <div><i class="fa-solid fa-toolbox fa-2x"></i></div>
+                            <h4><br>EXPERIENCIA</h4>
+                        </button>
+                    </div>
+                    <div class="col panel">
+                        <button type="button" class="caja" data-bs-toggle="modal" data-bs-target="#ModalPerfil">
+                            <div><i class="fa-solid fa-id-badge fa-2x"></i></div>
+                            <h4><br>PERFIL</h5>
+                        </button>
+                    </div>
+                </div>
+                <div class="row g-2 g-lg-3">
+                    <div class="col panel">
+                        <button type="button" class="caja" data-bs-toggle="modal" data-bs-target="#ModalProyectos">
+                            <div><i class="fa-solid fa-file-circle-check fa-2x"></i></div>
+                            <h4><br>PROYECTOS</h4>
+                        </button>
+                    </div>
+                    <div class="col panel">
+                        <button type="button" class="caja" data-bs-toggle="modal" data-bs-target="#ModalSkills">
+                            <div><i class="fa-solid fa-hammer fa-2x"></i></div>
+                            <h4><br>SKILLS</h4>
+                        </button>
+                    </div>
+                    <div class="col panel">
+                        <button type="button" class="caja"data-bs-toggle="modal" data-bs-target="#ModalRedes">
+                            <div><i class="fa-solid fa-share-nodes fa-2x"></i></div>
+                            <h4><br>REDES</h4>
+                        </button>
+                    </div>
+                    <div class="col panel">
+                        <button type="button" class="caja" data-bs-toggle="modal" data-bs-target="#ModalReferencias">
+                            <div><i class="fa-solid fa-comments fa-2x"></i></div>
+                            <h4><br>REFERENCIAS</h4>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+<!-- ...............Inicio de Modal para Acerca de Mi -->
+    <div class="modal fade" id="ModalAcercade" name="ModalAcercade" tabindex="-1" aria-labelledby="ModalAcercade" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="exampleModalLabel">Acerca de Mi</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3 row">
+                        <textarea class="form-control form-control-sm" id="formFileSm" type="text" rows="3" 
+                        placeholder="Breve descripción profesional de la persona."></textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-primary">Guardar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- ...............Fin de Modal para Acerca de Mi -->
+<!-- ................................................................................. -->
+<!-- ...............Inicio de Modal para Banner -->
+    <div class="modal fade" id="ModalBanner" name="ModalBanner" tabindex="-1" aria-labelledby="ModalBanner" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="exampleModalLabel">Banner</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3 row">
+                        <input class="form-control form-control-sm" id="formFileSm" type="file">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-primary">Guardar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- ...............Fin de Modal para Banner -->
+<!-- ................................................................................. -->
+<!-- ...............Inicio de Modal para Estudios -->
+    <div class="modal fade" id="ModalEstudios" name="ModalEstudios" tabindex="-1" aria-labelledby="ModalEstudios" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Estudios</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="col-4 mb-3">
+                        <select class="form-select form-select-sm" aria-label=".form-select-sm example" aria-placeholder="Seleccionar">
+                            <option selected>Seleccionar</option>
+                            <!--<option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>-->
+                          </select>
+                    </div>
+                    <div class="mb-3 row">
+                        <label for="formFileSm" class="form-label">Logo de la Institución</label>
+                        <input class="form-control form-control-sm" id="formFileSm" type="file">
+                    </div>
+                    <div class="mb-3 row">
+                        <label for="formFileSm" class="form-label">Título</label>
+                        <input class="form-control form-control-sm" id="formFileSm" type="text" placeholder="Curso en...">
+                    </div>
+                    <div class="mb-3 row">
+                        <label for="formFileSm" class="form-label">Año Inicio - Año Fin</label>
+                        <input class="form-control form-control-sm" id="formFileSm" type="text" placeholder="2021-2022">
+                    </div>
+                    <div class="mb-3 row">
+                        <label for="formFileSm" class="form-label">Descripción del Estudio</label>
+                        <textarea class="form-control form-control-sm" id="formFileSm" type="text" rows="3" placeholder="Breve descripción del estudio"></textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary">Eliminar</button>
+                    <button type="button" class="btn btn-primary">Agregar</button>
+                    <button type="button" class="btn btn-success">&nbsp;&nbsp;Editar&nbsp;&nbsp;</button>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- ...............Fin de Modal para Estudios -->
+<!-- ................................................................................. -->
+<!-- ...............Inicio de Modal para Experiencia -->
+    <div class="modal fade" id="ModalExperiencia" name="ModalExperiencia" tabindex="-1" aria-labelledby="ModalExperiencia" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="exampleModalLabel">Experiencia</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cancel"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="col-4 mb-3">
+                        <select class="form-select form-select-sm" aria-label=".form-select-sm example" aria-placeholder="Seleccionar">
+                            <option selected>Seleccionar</option>
+                            <!--<option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>-->
+                          </select>
+                    </div>
+                    <div class="mb-3 row">
+                        <label for="formFileSm" class="form-label">Logo de la Empresa</label>
+                        <input class="form-control form-control-sm" id="formFileSm" type="file">
+                    </div>
+                    <div class="mb-3 row">
+                        <label for="formFileSm" class="form-label">Título del Puesto</label>
+                        <input class="form-control form-control-sm" id="formFileSm" type="text" placeholder="Developer, Support...">
+                    </div>
+                    <div class="mb-3 row">
+                        <label for="formFileSm" class="form-label">Descripción del Puesto</label>
+                        <textarea class="form-control form-control-sm" id="formFileSm" type="text" rows="3" 
+                        placeholder="Breve descripción del puesto"></textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary">Eliminar</button>
+                    <button type="button" class="btn btn-primary">Agregar</button>
+                    <button type="button" class="btn btn-success">&nbsp;&nbsp;Editar&nbsp;&nbsp;</button>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- ...............Fin de Modal para Experiencia -->
+<!-- ................................................................................. -->
+<!-- ...............Inicio de Modal para Perfil -->
+    <div class="modal fade" id="ModalPerfil" name="ModalPerfil" tabindex="-1" aria-labelledby="ModalPerfil" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="exampleModalLabel">Perfil</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="mb-3 row">
+                    <label for="formFileSm" class="form-label">Foto de Perfil</label>
+                    <input class="form-control form-control-sm" id="formFileSm" type="file">
+                </div>
+                <div class="mb-3 row">
+                    <label for="formFileSm" class="form-label">Nombre y Apellido</label>
+                    <input class="form-control form-control-sm" id="formFileSm" type="text" placeholder="Juan Perez">
+                </div>
+                <div class="mb-3 row">
+                    <label for="formFileSm" class="form-label">Título</label>
+                    <textarea class="form-control form-control-sm" id="formFileSm" type="text"
+                    placeholder="Full-Stack Developer, Frontend Developer..."></textarea>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary">Guardar</button>
+            </div>
+        </div>
+        </div>
+    </div>
+<!-- ...............Fin de Modal para Perfil -->
+<!-- ................................................................................. -->
+<!-- ...............Inicio de Modal para Proyectos -->
+    <div class="modal fade" id="ModalProyectos" name="ModalProyectos" tabindex="-1" aria-labelledby="ModalProyectos" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="exampleModalLabel">Proyectos</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="col-4 mb-3">
+                        <select class="form-select form-select-sm" aria-label=".form-select-sm example" aria-placeholder="Seleccionar">
+                            <option selected>Seleccionar</option>
+                            <!--<option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>-->
+                          </select>
+                    </div>
+                    <div class="mb-3 row">
+                        <label for="formFileSm" class="form-label">Imagen del Proyecto</label>
+                        <input class="form-control form-control-sm" id="formFileSm" type="file">
+                    </div>
+                    <div class="mb-3 row">
+                        <label for="formFileSm" class="form-label">Título del Proyecto</label>
+                        <input class="form-control form-control-sm" id="formFileSm" type="text" placeholder="Página web...">
+                    </div>
+                    <div class="mb-3 row">
+                        <label for="formFileSm" class="form-label">Descripción del Proyecto</label>
+                        <textarea class="form-control form-control-sm" id="formFileSm" type="text" rows="3"
+                        placeholder="Breve descripción del proyecto"></textarea>
+                    </div>
+                    <div class="mb-3 row">
+                        <label for="formFileSm" class="form-label">Link del repositorio</label>
+                        <input class="form-control form-control-sm" id="formFileSm" type="text"
+                        placeholder="Link de github donde se almacena el repositorio">
+                    </div>
+                    <div class="mb-3 row">
+                        <label for="formFileSm" class="form-label">Link para ver online</label>
+                        <input class="form-control form-control-sm" id="formFileSm" type="text"
+                        placeholder="Link para ver la web online">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary">Eliminar</button>
+                    <button type="button" class="btn btn-primary">Agregar</button>
+                    <button type="button" class="btn btn-success">&nbsp;&nbsp;Editar&nbsp;&nbsp;</button>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- ...............Fin de Modal para Proyectos -->
+<!-- ................................................................................. -->
+<!-- ...............Inicio de Modal para Skills -->
+    <div class="modal fade" id="ModalSkills" name="ModalSkills" tabindex="-1" aria-labelledby="ModalSkills" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="exampleModalLabel">Skills</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="col-4 mb-3">
+                        <select class="form-select form-select-sm" aria-label=".form-select-sm example" aria-placeholder="Seleccionar">
+                            <option selected>Seleccionar</option>
+                            <!--<option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>-->
+                          </select>
+                    </div>
+                    <div class="mb-3 row">
+                        <label for="formFileSm" class="form-label">Título de Skill</label>
+                        <input class="form-control form-control-sm" id="formFileSm" type="text" placeholder="HTML, CSS, Python, Java...">
+                    </div>
+                    <div class="mb-3 row">
+                        <label for="formFileSm" class="form-label">Porcentaje</label>
+                        <input class="form-control form-control-sm" id="formFileSm" type="text" placeholder="50%, 80%, 100%...">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary">Eliminar</button>
+                    <button type="button" class="btn btn-primary">Agregar</button>
+                    <button type="button" class="btn btn-success">&nbsp;&nbsp;Editar&nbsp;&nbsp;</button>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- ...............Fin de Modal para Skills -->
+<!-- ................................................................................. -->
+<!-- ...............Inicio de Modal para Redes -->
+    <div class="modal fade" id="ModalRedes" name="ModalRedes" tabindex="-1" aria-labelledby="ModalRedes" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="exampleModalLabel">Redes Sociales</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="col-4 mb-3">
+                        <select class="form-select form-select-sm" aria-label=".form-select-sm example" aria-placeholder="Seleccionar">
+                            <option selected>Seleccionar</option>
+                            <!--<option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>-->
+                          </select>
+                    </div>
+                    <div class="mb-3 row">
+                        <label for="formFileSm" class="form-label">Título de Red social</label>
+                        <input class="form-control form-control-sm" id="formFileSm" type="text" placeholder="Ej: Facebook, Instagram...">
+                    </div>
+                    <div class="mb-3 row">
+                        <label for="formFileSm" class="form-label">Link</label>
+                        <input class="form-control form-control-sm" id="formFileSm" type="text" placeholder="Link de la red social">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary">Eliminar</button>
+                    <button type="button" class="btn btn-primary">Agregar</button>
+                    <button type="button" class="btn btn-success">&nbsp;&nbsp;Editar&nbsp;&nbsp;</button>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- ...............Fin de Modal para Redes -->
+<!-- ................................................................................. -->
+<!-- ...............Inicio de Modal para Referencias -->
+    <div class="modal fade" id="ModalReferencias" name="ModalReferencias" tabindex="-1" aria-labelledby="ModalReferencias" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="exampleModalLabel">Referencias</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="col-4 mb-3">
+                        <select class="form-select form-select-sm" aria-label=".form-select-sm example" aria-placeholder="Seleccionar">
+                            <option selected>Seleccionar</option>
+                            <!--<option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>-->
+                          </select>
+                    </div>
+                    <div class="mb-3 row">
+                        <label for="formFileSm" class="form-label">Nombre y Apellido</label>
+                        <input class="form-control form-control-sm" id="formFileSm" type="text" placeholder="Juan Perez">
+                    </div>
+                    <div class="mb-3 row">
+                        <label for="formFileSm" class="form-label">Telefono</label>
+                        <input class="form-control form-control-sm" id="formFileSm" type="text" placeholder="+54 9 11 0000-0000">
+                    </div>
+                    <div class="mb-3 row">
+                        <label for="staticEmail" class="form-label">Email</label>
+                        <input type="text" class="form-control form-control-sm" name="email" placeholder="email@dominio.com">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary">Eliminar</button>
+                    <button type="button" class="btn btn-primary">Agregar</button>
+                    <button type="button" class="btn btn-success">&nbsp;&nbsp;Editar&nbsp;&nbsp;</button>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- ...............Fin de Modal para Referencias -->
+
+    </main>
+      <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+</body>
+</html>

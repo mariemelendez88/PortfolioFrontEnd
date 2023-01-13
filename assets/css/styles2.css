@@ -1,0 +1,65 @@
+/* ...............Inicio de Background General*/
+body{
+    background-image: url(/assets/img/banner.png);
+    position: relative;
+    background-size: 100%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+.container-fluid, .row{
+    padding: 0;
+    margin: 0;
+}
+/* ...............Fin Background General*/
+/* ................................................................................. */
+/* ...............Inicio de Navbar*/
+.bg-secondary{
+    background-color: #060028!important;
+    z-index: 1030;
+}
+/* ...............Fin de Navbar*/
+/* ................................................................................. */
+/* ...............Inicio de Redes sociales*/
+.list-group{
+    --bs-list-group-bg: none;
+    --bs-list-group-border-color: none;
+}
+i.fa-brands.fa-github.fa-2x.text-white:hover{
+    color: #beb8b8 !important;
+}
+i.fa-brands.fa-linkedin.fa-2x.text-white:hover{
+    color: #0066ff !important;
+}
+/* ...............Fin de Redes sociales*/
+/* ................................................................................. */
+/* ...............Inicio de Logout*/
+i.fa-solid.fa-right-from-bracket.fa-2x.text-white:hover{
+    color: #ff0000 !important;
+}
+/* ...............Fin de Logout*/
+/* ................................................................................. */
+/* ...............Inicio de Panel*/
+.panel{
+    margin-top: 4rem;
+}
+
+.boton{
+    color: #ffffff;
+    background-color: #00378a;
+    border-color: #ffffff;
+    border-width: 1rem;
+    padding: 5rem;
+    border-radius: 1rem;
+}
+.caja{
+    color: #ffffff;
+    width: 12rem;
+    height: 12rem;
+    background-color: #00378a;
+    border-color: #ffffff;
+    border-width: 1rem;
+    border-radius: 1rem;
+  }
