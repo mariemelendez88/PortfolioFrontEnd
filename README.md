@@ -1,11 +1,12 @@
 # Maqueta de Frontend Estático 
-
+```
 ## Se desarrolla en Visual Studio Code
 
 ## Se utilizaron códigos en:
 
-### HTML
+### - HTML
 
-### CSS
+### - CSS
 
-### Bootstrap 5
+### - Bootstrap 5
+```
