@@ -1,14 +1,11 @@
-<!-- .............Inicio item................ -->
-<section id="dashboardexperiencia" class="experiencia mt-3">
+<!-- .............Inicio Experiencias................ -->
+<section id="experiencia" class="experiencia mt-5">
     <div class="container-fluid">
         <div class="row">
             <div class="titulo-exp">
                 <h1 class="text-center linea-exp">EXPERIENCIA</h1>
             </div>
             <div class="mt-3 mb-2 caja-exp">
-                <div class="col-12 text-center">
-                    <button type="submit" class="btn btn-dark nuevo" data-bs-dismiss="modal">Añadir nuevo ítem</button>
-                </div>
                 <ul>
                     <div *ngFor = "let item of experiencias">
                         <li class="list-group-item mt-5">
@@ -18,17 +15,10 @@
                                         <img [src]="item.logo" class="logo-exp" width="100rem">
                                     </a>
                                 </div>
-                                <div class="col-12 col-md-8">
+                                <div class="col">
                                     <h3>{{item.puesto}} ({{item.fecha_inicio}}-{{item.fecha_fin}})</h3>
                                     <h4>{{item.instit}}</h4>
                                     <p>{{item.descripcion}}</p>
-                                </div>
-                                <div class="col-12 col-md-2 text-center">
-                                    <ul class="list-group boton">
-                                    <button type="submit" class="btn btn-dark" data-bs-dismiss="modal" (click)="listarItem(item.id)">Editar</button>
-                                    <!-- <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Eliminar</button> -->
-                                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal" (click)="eliminarItem(item.id)">Eliminar</button>
-                                    </ul>
                                 </div>
                             </div>
                         </li>
@@ -37,10 +27,10 @@
             </div>
         </div>
     </div>
-<!-- ..............Fin item.................. -->
+<!-- ..............Fin Experiencias.................. -->
 </section>
 
-<!-- ...............Inicio de Modal NUEVO para Experiencia -->
+<!-- ...............Inicio de Modal para Experiencia -->
 <div class="modal fade" id="ModalExperiencia" name="ModalExperiencia" tabindex="-1" aria-labelledby="ModalExperiencia" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
