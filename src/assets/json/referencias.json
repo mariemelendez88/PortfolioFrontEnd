@@ -1,0 +1,25 @@
+{
+    "referencias": [
+        {
+            "id":       1,
+            "nombre":   "Juan",
+            "apellido": "Perez",
+            "telefono": "+54 9 11 1234-5678",
+            "email":    "juanp@mail.com"
+        },
+        {
+            "id":       3,
+            "nombre":   "Maria",
+            "apellido": "Esparza",
+            "telefono": "+54 9 11 8765-4321",
+            "email":    "mariae@mail.com"
+        },
+        {
+            "id":       3,
+            "nombre":   "Francisco",
+            "apellido": "Lara",
+            "telefono": "+54 9 11 1346-7982",
+            "email":    "franciscol@mail.com"
+        }
+    ]
+}

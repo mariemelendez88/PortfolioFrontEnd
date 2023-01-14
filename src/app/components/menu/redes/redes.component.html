@@ -1,0 +1,12 @@
+<!-- ...............Inicio de redes sociales-->
+<ul class="list-group list-group-horizontal">
+    <div *ngFor="let red of redes">
+        <li class="list-group-item">
+            <a [href]="red.urlred" target="_blank">
+                <i [ngClass]="red.iconred" class="fa-lg text-white m-0 p-0"></i>
+            </a>
+        </li>
+    </div>
+</ul>
+
+<!-- ...............Fin de redes sociales-->

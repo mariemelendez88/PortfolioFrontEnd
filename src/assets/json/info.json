@@ -1,0 +1,14 @@
+{
+    "persona": {
+        "imgBanner": "/assets/img/banner2.png",
+        "imgPfp": "/assets/img/pfp.png",
+        "descripcionPfp": "engineer, full stack",
+        "nombre": "Marie",
+        "apellido": "Melendez",
+        "titulo": "Full Stack Developer",
+        "frase": "No hay demanda de ingenieros mujeres… pero siempre habrá demanda para cualquier persona que pueda hacer bien su trabajo (Edith Clarke, 1883-1959).",
+        "acercade": "Entrando en el mundo de la programación, y en búsqueda de mi primer empleo.",
+        "cvpdf": "../assets/download/CV-Melendez_Marie - Developer-ENG.pdf",
+        "texto": "Copyright, MarieM 2022. All Rights Reserved"
+    }
+}

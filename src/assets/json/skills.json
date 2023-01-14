@@ -1,0 +1,74 @@
+{
+    "skills": [
+        {
+            "id":               1,
+            "habilidad":        "HTML",
+            "porcentaje":       "90",
+            "iconskill":        "fa-brands fa-html5",
+            "tipo":             "Frontend"
+        },
+        {
+            "id":               2,
+            "habilidad":        "CSS",
+            "porcentaje":       "80",
+            "iconskill":        "fa-brands fa-css3-alt",
+            "tipo":             "Frontend"
+        },
+        {
+            "id":               3,
+            "habilidad":        "ANGULAR",
+            "porcentaje":       "75",
+            "iconskill":        "fa-brands fa-angular",
+            "tipo":             "Frontend"
+        },
+        {
+            "id":               4,
+            "habilidad":        "PYTHON",
+            "porcentaje":       "88",
+            "iconskill":        "fa-brands fa-python",
+            "tipo":              "Backend"
+        },
+        {
+            "id":               5,
+            "habilidad":        "JAVA",
+            "porcentaje":       "80",
+            "iconskill":        "fa-brands fa-java",
+            "tipo":              "Backend"
+        },
+        {
+            "id":               6,
+            "habilidad":        "SPRINGBOOT",
+            "porcentaje":       "60",
+            "iconskill":        "fa-solid fa-leaf",
+            "tipo":              "Backend"
+        },
+        {
+            "id":               7,
+            "habilidad":        "ESPAÑOL",
+            "porcentaje":       "100",
+            "iconskill":        "fa-solid fa-language",
+            "tipo":              "Idioma"
+        },
+        {
+            "id":               8,
+            "habilidad":        "INGLÉS",
+            "porcentaje":       "90",
+            "iconskill":        "fa-solid fa-language",
+            "tipo":              "Idioma"
+        },
+        {
+            "id":               9,
+            "habilidad":        "SCRUM",
+            "porcentaje":       "82",
+            "iconskill":        "fa-solid fa-arrows-split-up-and-left",
+            "tipo":              "Otro"
+        },
+        {
+            "id":               10,
+            "habilidad":        "PLANIFICACIÓN",
+            "porcentaje":       "80",
+            "iconskill":        "fa-solid fa-calendar-days",
+            "tipo":              "Otro"
+        }
+    ]
+}
