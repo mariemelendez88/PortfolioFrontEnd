@@ -6,6 +6,7 @@
                 <h1 class="text-center linea-exp">EXPERIENCIA</h1>
             </div>
             <div class="mt-3 mb-2 caja-exp">
+                <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#ModalExperiencia">Nuevo Item</button>
                 <ul>
                     <div *ngFor = "let item of experiencias">
                         <li class="list-group-item mt-5">
@@ -15,10 +16,14 @@
                                         <img [src]="item.logo" class="logo-exp" width="100rem">
                                     </a>
                                 </div>
-                                <div class="col">
+                                <div class="col-12 col-md-8">
                                     <h3>{{item.puesto}} ({{item.fecha_inicio}}-{{item.fecha_fin}})</h3>
                                     <h4>{{item.instit}}</h4>
                                     <p>{{item.descripcion}}</p>
+                                </div>
+                                <div class="col-12 col-md-1">
+                                    <button class="btn btn-success boton" (click)="cargarItem(item.id)" data-bs-toggle="modal" data-bs-target="#ModalExperiencia">Editar</button>
+                                    <button class="btn btn-danger boton" (click)="borrarItem(item.id)">Eliminar</button>
                                 </div>
                             </div>
                         </li>
