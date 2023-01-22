@@ -17,7 +17,7 @@ export class ExperienciaComponent implements OnInit {
     ) { }
 
     listarItems(): void{
-    this.Sexperiencia.list().subscribe(data =>{
+    this.Sexperiencia.listItems().subscribe(data =>{
       this.experiencias=data;
     });
   }

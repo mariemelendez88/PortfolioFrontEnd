@@ -31,11 +31,15 @@
     padding: 0.3rem;
 }
 .nuevo{
-    float: center;
+    width: 50%;
+    margin-top: 1rem;
+}
+.volver{
+    float: right;
     margin-top: 1rem;
 }
 .boton{
-    width: 5rem;
+    width: 10rem;
     margin-top: 1rem;
 }
 /* ................Fin de Experiencia*/

@@ -6,7 +6,10 @@
                 <h1 class="text-center linea-exp">EXPERIENCIA</h1>
             </div>
             <div class="mt-3 mb-2 caja-exp">
-                <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#ModalExperiencia">Nuevo Item</button>
+                <a>
+                    <button class="btn btn-dark volver" (click)="volver()" title="Volver a Dashboard"><i class="fa-solid fa-rotate-left"></i></button>
+                </a>
+                <button type="button" class="btn btn-success nuevo text-center" data-bs-toggle="modal" data-bs-target="#ModalExperiencia">Nuevo Item</button>
                 <ul>
                     <div *ngFor = "let item of experiencias">
                         <li class="list-group-item mt-5">
@@ -16,14 +19,22 @@
                                         <img [src]="item.logo" class="logo-exp" width="100rem">
                                     </a>
                                 </div>
-                                <div class="col-12 col-md-8">
+                                <div class="col-9 col-md-8">
                                     <h3>{{item.puesto}} ({{item.fecha_inicio}}-{{item.fecha_fin}})</h3>
                                     <h4>{{item.instit}}</h4>
                                     <p>{{item.descripcion}}</p>
                                 </div>
-                                <div class="col-12 col-md-1">
-                                    <button class="btn btn-success boton" (click)="cargarItem(item.id)" data-bs-toggle="modal" data-bs-target="#ModalExperiencia">Editar</button>
-                                    <button class="btn btn-danger boton" (click)="borrarItem(item.id)">Eliminar</button>
+                                <div class="col-2 text-center">
+                                    <div>
+                                        <button class="btn btn-success m-2" (click)="item.id? cargarItem(item.id): null" data-bs-toggle="modal" data-bs-target="#ModalExperiencia" title="Editar">
+                                            <i class="fa-solid fa-pen-clip"></i>
+                                        </button>
+                                    </div>
+                                    <div>
+                                        <button class="btn btn-danger m-2" (click)="item.id ? borrarItem(item.id) : null" title="Eliminar">
+                                            <i class="fa-solid fa-trash-can"></i>
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
                         </li>
@@ -40,50 +51,90 @@
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title" id="exampleModalLabel">Experiencia</h4>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cancel"></button>
+                <h4 class="modal-title" id="ModalExperienciaLabel">Experiencia</h4>
+                <button type="button" (click)="limpiar()" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <div class="col-4 mb-3">
-                    <select class="form-select form-select-sm" aria-label=".form-select-sm example" aria-placeholder="Seleccionar">
-                        <option selected>Seleccionar</option>
-                        <!--<option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>-->
-                      </select>
-                </div>
-                <div class="mb-3 row">
-                    <label for="formFileSm" class="form-label">Logo de la Compañía</label>
-                    <input class="form-control form-control-sm" id="formFileSm" type="file">
-                </div>
-                <div class="mb-3 row">
-                    <label for="formFileSm" class="form-label">Compañía</label>
-                    <input class="form-control form-control-sm" id="formFileSm" type="text" placeholder="Globant, Accenture...">
-                </div>
-                <div class="mb-3 row">
-                    <label for="formFileSm" class="form-label">Título del Puesto</label>
-                    <input class="form-control form-control-sm" id="formFileSm" type="text" placeholder="Developer, Support...">
-                </div>
-                <div class="mb-3 row">
-                    <label for="formFileSm" class="form-label">Año Inicio</label>
-                    <input class="form-control form-control-sm" id="formFileSm" type="text" placeholder="2021">
-                </div>
-                <div class="mb-3 row">
-                    <label for="formFileSm" class="form-label">Año Fin</label>
-                    <input class="form-control form-control-sm" id="formFileSm" type="text" placeholder="2021">
-                </div>
-                <div class="mb-3 row">
-                    <label for="formFileSm" class="form-label">Descripción del Puesto</label>
-                    <textarea class="form-control form-control-sm" id="formFileSm" type="text" rows="3" 
-                    placeholder="Breve descripción del puesto"></textarea>
-                </div>
+                <form [formGroup]="form">
+                    <div class="mb-3 row">
+                        <label for="formFileSm" class="form-label">Logo</label>
+                        <input type="file" class="form-control" id="logo" name="">
+                    </div>
+                    <div class="mb-3 row">
+                        <label for="formFileSm" class="form-label">Empresa</label>
+                        <input type="text" class="form-control" id="instit" formControlName="instit" name="" placeholder="Globant, Accenture..."
+                        [ngClass]="{'is-invalid': InstitInvalido, 'is-valid': InstitValido}">
+                        
+                        <!-- Se verifica si cumple con el formato -->
+                        <div *ngIf="Instit?.errors && Instit?.touched">
+                            <p *ngIf="Instit?.hasError('required')" class="errores">
+                                Campo requerido.
+                            </p>
+                            <p *ngIf="Instit?.hasError('instit')" class="errores">
+                                Debe ser de 3 o más caracteres.
+                            </p>
+                        </div>
+                    </div>
+                    <input type="hidden" name="" id="id">
+                    <div class="mb-3 row">
+                        <label for="formFileSm" class="form-label">Link de la Empresa</label>
+                        <input type="text" class="form-control" id="link_instit" formControlName="link_instit" name="" placeholder="Globant, Accenture...">
+                    </div>
+                    <div class="mb-3 row">
+                        <label for="formFileSm" class="form-label">Puesto</label>
+                        <input type="text" class="form-control" id="puesto" formControlName="puesto" name="" placeholder="Developer, Support..."
+                        [ngClass]="{'is-invalid': PuestoInvalido, 'is-valid': PuestoValido}">
+                        
+                        <!-- Se verifica si cumple con el formato -->
+                        <div *ngIf="Puesto?.errors && Puesto?.touched">
+                            <p *ngIf="Puesto?.hasError('required')" class="errores">
+                                Campo requerido.
+                            </p>
+                            <p *ngIf="Puesto?.hasError('puesto')" class="errores">
+                                Debe ser de 3 o más caracteres.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label for="formFileSm" class="form-label">Año Inicio</label>
+                        <input type="text" class="form-control" id="fecha_inicio" formControlName="fecha_inicio" name="" placeholder="2021"
+                        [ngClass]="{'is-invalid': InicioInvalido, 'is-valid': InicioValido}">
+                        
+                        <!-- Se verifica si cumple con el formato -->
+                        <div *ngIf="Inicio?.errors && Inicio?.touched">
+                            <p *ngIf="Inicio?.hasError('required')" class="errores">
+                                Campo requerido.
+                            </p>
+                            <p *ngIf="Inicio?.hasError('fecha_inicio')" class="errores">
+                                Debe ser de 3 o más caracteres.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label for="formFileSm" class="form-label">Año Fin</label>
+                        <input type="text" class="form-control" id="fecha_fin" formControlName="fecha_fin" name="" placeholder="2021">
+                    </div>
+                    <div class="mb-3 row">
+                        <label for="formFileSm" class="form-label">Descripción del puesto</label>
+                        <input type="text" class="form-control" id="descripcion" formControlName="descripcion" name="" placeholder="Describa brevemente las funciones del puesto de trabajo"
+                        [ngClass]="{'is-invalid': DescripInvalido, 'is-valid': DescripValido}">
+                        
+                        <!-- Se verifica si cumple con el formato -->
+                        <div *ngIf="Descrip?.errors && Descrip?.touched">
+                            <p *ngIf="Descrip?.hasError('required')" class="errores">
+                                Campo requerido.
+                            </p>
+                            <p *ngIf="Descrip?.hasError('descripcion')" class="errores">
+                                Debe ser de 3 o más caracteres.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" (click)="guardarItem()" class="btn btn-dark" data-bs-dismiss="modal" [disabled]="form.invalid">Guardar</button>
+                        <button type="button" (click)="limpiar()" class="btn btn-secondary" data-bs-dismiss="modal">Volver</button>
+                    </div>
+                </form>
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary">Eliminar</button>
-                <button type="button" class="btn btn-primary">Agregar</button>
-                <button type="button" class="btn btn-success">&nbsp;&nbsp;Editar&nbsp;&nbsp;</button>
-            </div>
-        </div>
     </div>
 </div>
 <!-- ...............Fin de Modal para Experiencia -->
