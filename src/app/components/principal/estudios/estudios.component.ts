@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Estudios } from 'src/app/entidades/Estudios';
 import { EstudiosService } from 'src/app/servicios/estudios.service';
 
 @Component({
@@ -8,20 +9,21 @@ import { EstudiosService } from 'src/app/servicios/estudios.service';
 })
 export class EstudiosComponent implements OnInit {
   //Crear e inicializar variables de instancia para almacenar los datos con los que trata el Servicio
-  estudios: any=[];
+  estudios: Estudios[]=[];
 
   constructor(
     //Inyectar el Servicio para tener acceso en la clase a los Métodos
-    private EstudiosService: EstudiosService,
+    private Sestudios: EstudiosService,
     ) { }
 
+    listarItems(): void{
+    this.Sestudios.listItems().subscribe(data =>{
+      this.estudios=data;
+    });
+  }
+
   ngOnInit(): void {
-    //Esto es almacenar en la variebla de instancia los datos recuperados por el Servicio
-    this.EstudiosService.getEstudios().subscribe(data => {
-      console.log(data);
-      //Definir info a mostrar
-      this.estudios = data.estudios;
-    })
+    this.listarItems();
   }
 
 }

@@ -38,6 +38,7 @@ import { LogoApComponent } from './components/menu/logo-ap/logo-ap.component';
 import { BotonLoginComponent } from './components/menu/boton-login/boton-login.component';
 import { BotonLogoutComponent } from './components/menu/boton-logout/boton-logout.component';
 import { DashboardexperienciaComponent } from './components/dashboard/dashboardexperiencia/dashboardexperiencia.component';
+import { DashboardestudiosComponent } from './components/dashboard/dashboardestudios/dashboardestudios.component';
 
 @NgModule({
   declarations: [
@@ -70,7 +71,8 @@ import { DashboardexperienciaComponent } from './components/dashboard/dashboarde
     LogoApComponent,
     BotonLoginComponent,
     BotonLogoutComponent,
-    DashboardexperienciaComponent
+    DashboardexperienciaComponent,
+    DashboardestudiosComponent
   ],
   imports: [
     BrowserModule,

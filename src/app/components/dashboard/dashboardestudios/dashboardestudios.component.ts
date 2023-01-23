@@ -2,32 +2,32 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Experiencias } from 'src/app/entidades/Experiencias';
-import { ExperienciasService } from 'src/app/servicios/experiencias.service';
+import { Estudios } from 'src/app/entidades/Estudios';
+import { EstudiosService } from 'src/app/servicios/estudios.service';
 
 @Component({
-  selector: 'app-dashboardexperiencia',
-  templateUrl: './dashboardexperiencia.component.html',
-  styleUrls: ['./dashboardexperiencia.component.css']
+  selector: 'app-dashboardestudios',
+  templateUrl: './dashboardestudios.component.html',
+  styleUrls: ['./dashboardestudios.component.css']
 })
-export class DashboardexperienciaComponent implements OnInit {
+export class DashboardestudiosComponent implements OnInit {
   //Crear e inicializar variables de instancia para almacenar los datos con los que trata el Servicio
   form: FormGroup;
-  experiencias: Experiencias[]=[];
+  estudios: Estudios[]=[];
   item: any;
   id?:number;
 
   constructor(
     //Inyectar el Servicio para tener acceso en la clase a los Métodos
     private http: HttpClient,
-    private Sexperiencia: ExperienciasService,
+    private Sestudios: EstudiosService,
     private formBuilder: FormBuilder,
     private ruta: Router
   ) 
   {
     this.form = this.formBuilder.group({
       id: [''],
-      puesto: ['', [Validators.required, Validators.minLength(3)]],
+      titulo: ['', [Validators.required, Validators.minLength(3)]],
       instit: ['', [Validators.required, Validators.minLength(3)]],
       fecha_inicio: ['', [Validators.required, Validators.minLength(4), Validators.maxLength(4)]],
       fecha_fin: [''],
@@ -73,16 +73,16 @@ export class DashboardexperienciaComponent implements OnInit {
     return this.form.get("fecha_fin");
   }
 
-  get Puesto() {
-    return this.form.get("puesto");
+  get Titulo() {
+    return this.form.get("titulo");
   }
 
-  get PuestoInvalido(){
-    return this.Puesto?.errors && this.Puesto?.touched;
+  get TituloInvalido(){
+    return this.Titulo?.errors && this.Titulo?.touched;
   }
 
-  get PuestoValido(){
-    return !this.Puesto?.errors && this.Puesto?.touched;
+  get TituloValido(){
+    return !this.Titulo?.errors && this.Titulo?.touched;
   }
 
   get Descrip() {
@@ -98,9 +98,9 @@ export class DashboardexperienciaComponent implements OnInit {
   }  
 
   listarItems(): void{
-    this.Sexperiencia.listItems().subscribe(data =>{
-      this.experiencias=data;
-      console.log("Experiencias cargadas correctamente");
+    this.Sestudios.listItems().subscribe(data =>{
+      this.estudios=data;
+      console.log("Estudios cargados correctamente");
     });
   }
 
@@ -110,7 +110,7 @@ export class DashboardexperienciaComponent implements OnInit {
   }
 
   cargarItem(id: number){
-    this.Sexperiencia.getById(id).subscribe(
+    this.Sestudios.getById(id).subscribe(
       data => {
         this.form.setValue(data);
       });
@@ -120,13 +120,14 @@ export class DashboardexperienciaComponent implements OnInit {
   guardarItem() {
     let item = this.form.value;
     if (item.id == '') {
-      this.Sexperiencia.saveItem(item).subscribe((data: any) => {
+      this.Sestudios.saveItem(item).subscribe((data: any) => {
           alert("Se añadió correctamente el item");
-          this.limpiar();
+          this.listarItems();
+          this.form.reset();
       });
       window.location.reload();
     } else {
-      this.Sexperiencia.updateItem(item).subscribe((data: any) => {
+      this.Sestudios.updateItem(item).subscribe((data: any) => {
           alert("Se modificó correctamente el item");
           this.limpiar();
       });
@@ -136,7 +137,7 @@ export class DashboardexperienciaComponent implements OnInit {
 
   borrarItem(id: number) {
     if (confirm("Confirme si desea eliminar este ítem")) {
-      this.Sexperiencia.deleteItem(id).subscribe(data => {
+      this.Sestudios.deleteItem(id).subscribe(data => {
         alert("Se eliminó correctamente el item: " + id);
       });
       window.location.reload();

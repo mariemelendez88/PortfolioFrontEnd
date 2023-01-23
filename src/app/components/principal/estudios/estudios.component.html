@@ -7,18 +7,18 @@
             </div>
             <div class="mt-3 mb-2 caja-edu">
                 <ul>
-                    <div *ngFor = "let estudio of estudios">
+                    <div *ngFor = "let item of estudios">
                         <li class="list-group-item mt-5">
                             <div class="container row">
                                 <div class="col-12 col-md-2 mt-2 text-center">
-                                    <a [href]="estudio.link_instit" class="col-3 text-center" target="_blank">
-                                        <img [src]="estudio.logo" class="logo-edu" width="100rem">
+                                    <a [href]="item.link_instit" class="col-3 text-center" target="_blank">
+                                        <img [src]="item.logo" class="logo-edu" width="100rem">
                                     </a>
                                 </div>
                                 <div class="col">
-                                    <h3>{{estudio.titulo}} ({{estudio.fecha_inicio}}-{{estudio.fecha_fin}})</h3>
-                                    <h4>{{estudio.instit}}</h4>
-                                    <p>{{estudio.descripcion}}</p>
+                                    <h3>{{item.titulo}} ({{item.fecha_inicio}}-{{item.fecha_fin}})</h3>
+                                    <h4>{{item.instit}}</h4>
+                                    <p>{{item.descripcion}}</p>
                                 </div>
                             </div>
                         </li>
