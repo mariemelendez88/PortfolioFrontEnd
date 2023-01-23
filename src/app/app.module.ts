@@ -24,8 +24,6 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { BannerComponent } from './components/principal/banner/banner.component';
 import { DashAcercademiComponent } from './modales/dash-acercademi/dash-acercademi.component';
 import { DashBannerComponent } from './modales/dash-banner/dash-banner.component';
-import { DashEstudiosComponent } from './modales/dash-estudios/dash-estudios.component';
-import { DashExperienciaComponent } from './modales/dash-experiencia/dash-experiencia.component';
 import { DashPerfilComponent } from './modales/dash-perfil/dash-perfil.component';
 import { DashProyectosComponent } from './modales/dash-proyectos/dash-proyectos.component';
 import { DashSkillsComponent } from './modales/dash-skills/dash-skills.component';
@@ -39,6 +37,7 @@ import { BotonLoginComponent } from './components/menu/boton-login/boton-login.c
 import { BotonLogoutComponent } from './components/menu/boton-logout/boton-logout.component';
 import { DashboardexperienciaComponent } from './components/dashboard/dashboardexperiencia/dashboardexperiencia.component';
 import { DashboardestudiosComponent } from './components/dashboard/dashboardestudios/dashboardestudios.component';
+import { DashboardproyectosComponent } from './components/dashboard/dashboardproyectos/dashboardproyectos.component';
 
 @NgModule({
   declarations: [
@@ -58,8 +57,6 @@ import { DashboardestudiosComponent } from './components/dashboard/dashboardestu
     BannerComponent,
     DashAcercademiComponent,
     DashBannerComponent,
-    DashEstudiosComponent,
-    DashExperienciaComponent,
     DashPerfilComponent,
     DashProyectosComponent,
     DashSkillsComponent,
@@ -72,7 +69,8 @@ import { DashboardestudiosComponent } from './components/dashboard/dashboardestu
     BotonLoginComponent,
     BotonLogoutComponent,
     DashboardexperienciaComponent,
-    DashboardestudiosComponent
+    DashboardestudiosComponent,
+    DashboardproyectosComponent
   ],
   imports: [
     BrowserModule,

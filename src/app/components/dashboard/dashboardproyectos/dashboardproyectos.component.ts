@@ -2,37 +2,37 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Estudios } from 'src/app/entidades/Estudios';
-import { EstudiosService } from 'src/app/servicios/estudios.service';
+import { Proyectos } from 'src/app/entidades/Proyectos';
+import { ProyectosService } from 'src/app/servicios/proyectos.service';
 
 @Component({
-  selector: 'app-dashboardestudios',
-  templateUrl: './dashboardestudios.component.html',
-  styleUrls: ['./dashboardestudios.component.css']
+  selector: 'app-dashboardproyectos',
+  templateUrl: './dashboardproyectos.component.html',
+  styleUrls: ['./dashboardproyectos.component.css']
 })
-export class DashboardestudiosComponent implements OnInit {
+export class DashboardproyectosComponent implements OnInit {
   //Crear e inicializar variables de instancia para almacenar los datos con los que trata el Servicio
   form: FormGroup;
-  estudios: Estudios[]=[];
+  proyectos: Proyectos[]=[];
   item: any;
   id?:number;
 
   constructor(
     //Inyectar el Servicio para tener acceso en la clase a los Métodos
     private http: HttpClient,
-    private Sestudios: EstudiosService,
+    private Sproyectos: ProyectosService,
     private formBuilder: FormBuilder,
     private ruta: Router
-  ) 
+  )
   {
+    const reg = '(https?://)?([\\da-z.-]+)\\.([a-z.]{2,6})[/\\w .-]*/?';  
+    
     this.form = this.formBuilder.group({
-      id: [''],
+      id: ['', [Validators.required]],
       titulo: ['', [Validators.required, Validators.minLength(3)]],
-      instit: ['', [Validators.required, Validators.minLength(3)]],
-      inicio: ['', [Validators.required, Validators.minLength(4), Validators.maxLength(4)]],
-      fin: [''],
+      fin: ['', [Validators.required, Validators.minLength(4)]],
       descripcion: ['', [Validators.required, Validators.minLength(8)]],
-      link_instit: [''],
+      link_repo: [''],
       logo: [''],
     });
   }
@@ -41,36 +41,20 @@ export class DashboardestudiosComponent implements OnInit {
     return this.form.get("logo");
   }
 
-  get Link_instit() {
-    return this.form.get("link_instit");
-  }
-
-  get Instit() {
-    return this.form.get("instit");
-  }
-
-  get InstitInvalido(){
-    return this.Instit?.errors && this.Instit?.touched;
-  }
-
-  get InstitValido(){
-    return !this.Instit?.errors && this.Instit?.touched;
-  }
-
-  get Inicio() {
-    return this.form.get("inicio");
-  }
-
-  get InicioInvalido(){
-    return this.Inicio?.errors && this.Inicio?.touched;
-  }
-
-  get InicioValido(){
-    return !this.Inicio?.errors && this.Inicio?.touched;
+  get Link_repo() {
+    return this.form.get("link_repo");
   }
 
   get Fin() {
     return this.form.get("fin");
+  }
+
+  get FinInvalido(){
+    return this.Fin?.errors && this.Fin?.touched;
+  }
+
+  get FinValido(){
+    return !this.Fin?.errors && this.Fin?.touched;
   }
 
   get Titulo() {
@@ -98,9 +82,9 @@ export class DashboardestudiosComponent implements OnInit {
   }  
 
   listarItems(): void{
-    this.Sestudios.listItems().subscribe(data =>{
-      this.estudios=data;
-      console.log("Estudios cargados correctamente");
+    this.Sproyectos.listItems().subscribe(data =>{
+      this.proyectos=data;
+      console.log("Proyectos cargados correctamente");
     });
   }
 
@@ -110,7 +94,7 @@ export class DashboardestudiosComponent implements OnInit {
   }
 
   cargarItem(id: number){
-    this.Sestudios.getById(id).subscribe(
+    this.Sproyectos.getById(id).subscribe(
       data => {
         this.form.setValue(data);
       });
@@ -120,14 +104,14 @@ export class DashboardestudiosComponent implements OnInit {
   guardarItem() {
     let item = this.form.value;
     if (item.id == '') {
-      this.Sestudios.saveItem(item).subscribe((data: any) => {
+      this.Sproyectos.saveItem(item).subscribe((data: any) => {
           alert("Se añadió correctamente el item");
           this.listarItems();
           this.form.reset();
       });
       window.location.reload();
     } else {
-      this.Sestudios.updateItem(item).subscribe((data: any) => {
+      this.Sproyectos.updateItem(item).subscribe((data: any) => {
           alert("Se modificó correctamente el item");
           this.limpiar();
       });
@@ -137,7 +121,7 @@ export class DashboardestudiosComponent implements OnInit {
 
   borrarItem(id: number) {
     if (confirm("Confirme si desea eliminar este ítem")) {
-      this.Sestudios.deleteItem(id).subscribe(data => {
+      this.Sproyectos.deleteItem(id).subscribe(data => {
         alert("Se eliminó correctamente el item: " + id);
       });
       window.location.reload();

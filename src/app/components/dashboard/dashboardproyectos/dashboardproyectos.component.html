@@ -1,0 +1,105 @@
+<!-- .............Inicio Proyectos................ -->
+<section id="dashproyectos" class="proyectos mt-5">
+    <div class="container-fluid">
+        <div class="titulo-proy">
+            <h1 class="text-center linea-proy">PROYECTOS</h1>
+        </div>
+        <div class="mt-3 mb-2 caja-pro">
+            <div class="text-center">
+                <button type="button" class="btn btn-success nuevo text-center" data-bs-toggle="modal" data-bs-target="#ModalProyecto">Nuevo Item</button>
+                <button class="btn btn-dark volver" (click)="volver()" title="Volver a Dashboard"><i class="fa-solid fa-rotate-left"></i></button>
+            </div>
+            <div *ngFor="let item of proyectos">
+                <div>
+                    <div class="caja-pro row mt-3">
+                        <div class="col-12 col-lg-6">
+                            <img [src]="item.logo" class="card-img-top p-2">
+                        </div>
+                        <div class="card-body col-12 col-lg-5 m-3">
+                            <h5>{{item.titulo}}</h5>
+                            <h6>({{item.fin}})</h6>
+                            <p>{{item.descripcion}}</p>
+                            <a [href]="item.link_repo" target="_blank" class="btn btn-primary">Visitar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- ..............Fin Proyectos.................. -->
+</section>
+
+
+<!-- ...............Inicio de Modal para Proyecto -->
+<div class="modal fade" id="ModalProyecto" name="ModalProyecto" tabindex="-1" aria-labelledby="ModalProyecto" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="ModalProyectoLabel">Proyectos</h4>
+                <button type="button" (click)="limpiar()" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form [formGroup]="form">
+                    <div class="mb-3 row">
+                        <label for="formFileSm" class="form-label">Imagen del Proyecto</label>
+                        <input type="file" class="form-control" id="logo" name="">
+                    </div>
+                    <div class="mb-3 row">
+                        <label for="formFileSm" class="form-label">Titulo del Proyecto</label>
+                        <input type="text" class="form-control" id="titulo" formControlName="titulo" name="" placeholder="Web de Tienda..."
+                        [ngClass]="{'is-invalid': TituloInvalido, 'is-valid': TituloValido}">
+                        
+                        <!-- Se verifica si cumple con el formato -->
+                        <div *ngIf="Titulo?.errors && Titulo?.touched">
+                            <p *ngIf="Titulo?.hasError('required')" class="errores">
+                                Campo requerido.
+                            </p>
+                            <p *ngIf="Titulo?.errors?.['minlength']" class="errores">
+                                Debe ser de 3 o más caracteres.
+                            </p>
+                        </div>
+                    </div>
+                    <input type="hidden" name="" id="id">
+                    <div class="mb-3 row">
+                        <label for="formFileSm" class="form-label">Año Finalización del Proyecto</label>
+                        <input type="text" class="form-control" id="fin" formControlName="fin" name="" placeholder="2021, Actual..."
+                        [ngClass]="{'is-invalid': FinInvalido, 'is-valid': FinValido}">
+                        
+                        <!-- Se verifica si cumple con el formato -->
+                        <div *ngIf="Fin?.errors && Fin?.touched">
+                            <p *ngIf="Fin?.hasError('required')" class="errores">
+                                Campo requerido.
+                            </p>
+                            <p *ngIf="Fin?.errors?.['minlength']" class="errores">
+                                Debe ser de 4 o más caracteres.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label for="formFileSm" class="form-label">Descripción del proyecto</label>
+                        <input type="text" class="form-control" id="descripcion" formControlName="descripcion" name="" placeholder="Describa brevemente el proyecto"
+                        [ngClass]="{'is-invalid': DescripInvalido, 'is-valid': DescripValido}">
+                        
+                        <!-- Se verifica si cumple con el formato -->
+                        <div *ngIf="Descrip?.errors && Descrip?.touched">
+                            <p *ngIf="Descrip?.hasError('required')" class="errores">
+                                Campo requerido.
+                            </p>
+                            <p *ngIf="Descrip?.errors?.['minlength']" class="errores">
+                                Debe ser de 8 o más caracteres.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label for="formFileSm" class="form-label">Link del Proyecto</label>
+                        <input type="text" class="form-control" id="link_repo" formControlName="link_repo" name="" placeholder="http://github.com/...">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" (click)="guardarItem()" class="btn btn-dark" data-bs-dismiss="modal" [disabled]="form.invalid">Guardar</button>
+                        <button type="button" (click)="limpiar()" class="btn btn-secondary" data-bs-dismiss="modal">Volver</button>
+                    </div>
+                </form>
+            </div>
+    </div>
+</div>
+<!-- ...............Fin de Modal para Proyecto -->

@@ -2,8 +2,8 @@
     "experiencias": [
         {
             "id":          1,
-            "fecha_inicio":      2013,
-            "fecha_fin":         2017,
+            "inicio":      2013,
+            "fin":         2017,
             "link_instit": "http://www.usb.ve/",
             "logo":        "/assets/img/USB-logo.png",
             "instit":      "Universidad Simón Bolívar",
@@ -12,8 +12,8 @@
         },
         {
             "id":          2,
-            "fecha_inicio":      2019,
-            "fecha_fin":         "Actual",
+            "inicio":      2019,
+            "fin":         "Actual",
             "link_instit": "https://www.worley.com/",
             "logo":        "/assets/img/Worley-logo.png",
             "instit":      "Worley",
@@ -22,8 +22,8 @@
         },
         {
             "id":          3,
-            "fecha_inicio":      2022,
-            "fecha_fin":         "Actual",
+            "inicio":      2022,
+            "fin":         "Actual",
             "logo":        "/assets/img/gocode.png",
             "link_instit": "https://gocode.ar/",
             "instit":      "GoCode Argentina",

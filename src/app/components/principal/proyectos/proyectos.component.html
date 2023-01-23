@@ -4,17 +4,17 @@
         <div class="titulo-proy">
             <h1 class="text-center linea-proy">PROYECTOS</h1>
         </div>
-        <div *ngFor="let proyecto of proyectos">
+        <div *ngFor="let item of proyectos">
             <div class="#">
                 <div class="caja-pro row mt-3">
                     <div class="col-12 col-lg-6">
-                        <img [src]="proyecto.logo" class="card-img-top p-2" [alt]="proyecto.descripcionlogo">
+                        <img [src]="item.logo" class="card-img-top p-2">
                     </div>
                     <div class="card-body col-12 col-lg-5 m-3">
-                        <h5>{{proyecto.titulo}}</h5>
-                        <h6>({{proyecto.fecha_fin}})</h6>
-                        <p>{{proyecto.descripcion}}</p>
-                        <a [href]="proyecto.link_repo" target="_blank" class="btn btn-primary">Visitar</a>
+                        <h5>{{item.titulo}}</h5>
+                        <h6>({{item.fin}})</h6>
+                        <p>{{item.descripcion}}</p>
+                        <a [href]="item.link_repo" target="_blank" class="btn btn-primary">Visitar</a>
                     </div>
                 </div>
             </div>

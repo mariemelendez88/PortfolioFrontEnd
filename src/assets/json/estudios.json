@@ -2,8 +2,8 @@
     "estudios": [
         {
             "id":          1, 
-            "fecha_inicio":      2006,
-            "fecha_fin":         2013,
+            "inicio":      2006,
+            "fin":         2013,
             "link_instit": "https://www.usb.ve/",
             "logo":        "/assets/img/USB-logo.png",
             "instit":      "Universidad Simón Bolívar",
@@ -12,8 +12,8 @@
         },
         {
             "id":          2,
-            "fecha_inicio":      2022,
-            "fecha_fin":         2023,
+            "inicio":      2022,
+            "fin":         2023,
             "logo":        "/assets/img/Argentina-Programa.png",
             "link_instit": "https://argentinaprograma.inti.gob.ar/",
             "instit":      "Argentina Programa - #YoProgramo",

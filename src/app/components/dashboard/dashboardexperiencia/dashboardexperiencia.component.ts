@@ -29,8 +29,8 @@ export class DashboardexperienciaComponent implements OnInit {
       id: [''],
       puesto: ['', [Validators.required, Validators.minLength(3)]],
       instit: ['', [Validators.required, Validators.minLength(3)]],
-      fecha_inicio: ['', [Validators.required, Validators.minLength(4), Validators.maxLength(4)]],
-      fecha_fin: [''],
+      inicio: ['', [Validators.required, Validators.minLength(4), Validators.maxLength(4)]],
+      fin: [''],
       descripcion: ['', [Validators.required, Validators.minLength(8)]],
       link_instit: [''],
       logo: [''],
@@ -58,7 +58,7 @@ export class DashboardexperienciaComponent implements OnInit {
   }
 
   get Inicio() {
-    return this.form.get("fecha_inicio");
+    return this.form.get("inicio");
   }
 
   get InicioInvalido(){
@@ -70,7 +70,7 @@ export class DashboardexperienciaComponent implements OnInit {
   }
 
   get Fin() {
-    return this.form.get("fecha_fin");
+    return this.form.get("fin");
   }
 
   get Puesto() {
