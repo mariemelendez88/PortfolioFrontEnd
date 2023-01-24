@@ -3,17 +3,42 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 //Esto es para poder hacer peticiones
 import { HttpClient } from "@angular/common/http";
+import { Skills } from '../entidades/Skills';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SkillsService {
-  //El constructor se hace como private porque solo lo veo yo y el primer http se llama alias
-  constructor(private http:HttpClient) { }
+  
+  url = 'http://localhost:8080/skills';
+  constructor(private httpClient:HttpClient) { }
 
-  //Método observable que devuelve los datos se puede usar getDatos o getMenu
-  getSkills():Observable<any>{
-    //Se llama al JSON con su path o ruta, o bien, en su lugar se puede poner una URL para traer datos de un JSON online
-    return this.http.get('../assets/json/skills.json');
+  public listItems(): Observable<Skills[]>{
+    return this.httpClient.get<Skills[]>(this.url);
   }
+
+  public getById(id: number): Observable<any>{
+    return this.httpClient.get<Skills>(this.url + `/${id}`);
+  }
+
+  public saveItem(estudio: Skills): Observable<any>{
+    return this.httpClient.post<any>(this.url, estudio);
+  }
+
+  public updateItem(estudio: Skills): Observable<any>{
+    return this.httpClient.put<Skills>(this.url, estudio);
+  }
+
+  public deleteItem(id: number): Observable<Skills>{
+    return this.httpClient.delete<any>(this.url + `/${id}`);
+  }
+
+  // //El constructor se hace como private porque solo lo veo yo y el primer http se llama alias
+  // constructor(private http:HttpClient) { }
+
+  // //Método observable que devuelve los datos se puede usar getDatos o getMenu
+  // getSkills():Observable<any>{
+  //   //Se llama al JSON con su path o ruta, o bien, en su lugar se puede poner una URL para traer datos de un JSON online
+  //   return this.http.get('../assets/json/skills.json');
+  // }
 }

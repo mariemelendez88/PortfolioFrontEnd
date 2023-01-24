@@ -24,11 +24,9 @@ export class DashboardproyectosComponent implements OnInit {
     private formBuilder: FormBuilder,
     private ruta: Router
   )
-  {
-    const reg = '(https?://)?([\\da-z.-]+)\\.([a-z.]{2,6})[/\\w .-]*/?';  
-    
+  {   
     this.form = this.formBuilder.group({
-      id: ['', [Validators.required]],
+      id: [''],
       titulo: ['', [Validators.required, Validators.minLength(3)]],
       fin: ['', [Validators.required, Validators.minLength(4)]],
       descripcion: ['', [Validators.required, Validators.minLength(8)]],

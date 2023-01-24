@@ -4,6 +4,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { DashboardestudiosComponent } from './components/dashboard/dashboardestudios/dashboardestudios.component';
 import { DashboardexperienciaComponent } from './components/dashboard/dashboardexperiencia/dashboardexperiencia.component';
 import { DashboardproyectosComponent } from './components/dashboard/dashboardproyectos/dashboardproyectos.component';
+import { DashboardskillsComponent } from './components/dashboard/dashboardskills/dashboardskills.component';
 
 const routes: Routes = [
   {
@@ -12,7 +13,8 @@ const routes: Routes = [
     children:[
       {path: 'dashboardexperiencia', component: DashboardexperienciaComponent},
       {path: 'dashboardestudios', component: DashboardestudiosComponent},
-      {path: 'dashboardproyectos', component: DashboardproyectosComponent}
+      {path: 'dashboardproyectos', component: DashboardproyectosComponent},
+      {path: 'dashboardskills', component: DashboardskillsComponent}
     ]
   },
 ]

@@ -1,0 +1,116 @@
+<!-- .............Inicio Skills................ -->
+<section id="dashskills" class="skills mt-5">
+    <div class="container-fluid">
+        <div>
+            <div class="titulo-skill">
+                <h1 class="text-center linea-skill">SKILLS</h1>
+            </div>
+        </div>
+    </div>
+    <div class="col-12 col-md-6 caja-skill mt-3">
+        <table class="table table-bordered grocery-crud-table table-hover">
+            <thead>
+                <th>Tipo de Habilidad</th>
+                <th>Habilidad</th>
+                <th>Porcentaje</th>
+                <th>Ícono de fontawesome</th>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of skills" [ngSwitch]="item.tipo">
+                    <div *ngSwitchCase="'Frontend'">
+                        <td>{{item.tipo}}</td>
+                        <td>{{item.habilidad}}</td>
+                        <td>{{item.porcentaje}}</td>
+                        <td>{{item.iconskill}}</td>
+                    </div>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+<!-- ..............Fin Skills.................. -->
+</section>
+
+
+<!-- ...............Inicio de Modal para Skill -->
+<div class="modal fade" id="ModalSkill" name="ModalSkill" tabindex="-1" aria-labelledby="ModalSkill" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="ModalSkillLabel">Skill</h4>
+                <button type="button" (click)="limpiar()" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form [formGroup]="form">
+                    
+                    <div class="mb-3 row">
+                        <label for="formFileSm" class="form-label">Tipo</label>
+                        <input type="text" class="form-control" id="tipo" formControlName="tipo" name="" placeholder="HTML, Francés, Liderazgo..."
+                        [ngClass]="{'is-invalid': TipoInvalido, 'is-valid': TipoValido}">
+                        
+                        <!-- Se verifica si cumple con el formato -->
+                        <div *ngIf="Tipo?.errors && Tipo?.touched">
+                            <p *ngIf="Tipo?.hasError('required')" class="errores">
+                                Campo requerido.
+                            </p>
+                            <p *ngIf="Tipo?.errors?.['minlength']" class="errores">
+                                Debe ser de 2 o más caracteres.
+                            </p>
+                        </div>
+                    </div>
+                    <!-- <div class="mb-3 row">
+                        <label for="formFileSm" class="form-label">Tipo de habilidad</label>
+                        <select class="form-select form-select-sm" id="tipo" formControlName="tipo" name="" 
+                            aria-label=".form-select-sm example" aria-placeholder="Seleccionar">
+                            <option value="0">Selecciona una opción</option>
+                            <option *ngFor="let dato of menu">
+                                {{dato}}
+                            </option>
+                        </select>
+                    </div> -->
+                    <div class="mb-3 row">
+                        <label for="formFileSm" class="form-label">Habilidad</label>
+                        <input type="text" class="form-control" id="habilidad" formControlName="habilidad" name="" placeholder="HTML, Francés, Liderazgo..."
+                        [ngClass]="{'is-invalid': HabilidadInvalido, 'is-valid': HabilidadValido}">
+                        
+                        <!-- Se verifica si cumple con el formato -->
+                        <div *ngIf="Habilidad?.errors && Habilidad?.touched">
+                            <p *ngIf="Habilidad?.hasError('required')" class="errores">
+                                Campo requerido.
+                            </p>
+                            <p *ngIf="Habilidad?.errors?.['minlength']" class="errores">
+                                Debe ser de 2 o más caracteres.
+                            </p>
+                        </div>
+                    </div>
+                    <input type="hidden" name="" id="id">
+                    <div class="mb-3 row">
+                        <label for="formFileSm" class="form-label">Ícono de fontawesome</label>
+                        <input type="text" class="form-control" id="iconskill" formControlName="iconskill" name="" placeholder="http://website.com">
+                    </div>
+                    <div class="mb-3 row">
+                        <label for="formFileSm" class="form-label">Porcentaje</label>
+                        <input type="text" class="form-control" id="porcentaje" formControlName="porcentaje" name="" placeholder="Developer, Support..."
+                        [ngClass]="{'is-invalid': PorcentajeInvalido, 'is-valid': PorcentajeValido}">
+                        
+                        <!-- Se verifica si cumple con el formato -->
+                        <div *ngIf="Porcentaje?.errors && Porcentaje?.touched">
+                            <p *ngIf="Porcentaje?.hasError('required')" class="errores">
+                                Campo requerido.
+                            </p>
+                            <p *ngIf="Porcentaje?.errors?.['minlength']" class="errores">
+                                Debe ser de tipo numérico y >= 0
+                            </p>
+                            <p *ngIf="Porcentaje?.errors?.['maxlength']" class="errores">
+                                Debe ser de tipo numérico y <= 100
+                            </p>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" (click)="guardarItem()" class="btn btn-dark" data-bs-dismiss="modal" [disabled]="form.invalid">Guardar</button>
+                        <button type="button" (click)="limpiar()" class="btn btn-secondary" data-bs-dismiss="modal">Volver</button>
+                    </div>
+                </form>
+            </div>
+    </div>
+</div>
+<!-- ...............Fin de Modal para Skill -->

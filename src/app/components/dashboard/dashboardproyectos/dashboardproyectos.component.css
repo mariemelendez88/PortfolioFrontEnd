@@ -29,6 +29,17 @@
     background: #d1cdcd;
   }
   .card-body{
-    padding-top: 5%;
+    padding-top: 1rem;
+  }
+  .nuevo{
+      width: 8rem;
+      margin-top: 1rem;
+  }
+  .volver{
+      float: right;
+      margin-top: 1rem;
+  }
+  ul{
+    padding: 0;
   }
 /* ................Fin de Proyectos*/

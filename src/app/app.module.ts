@@ -38,6 +38,7 @@ import { BotonLogoutComponent } from './components/menu/boton-logout/boton-logou
 import { DashboardexperienciaComponent } from './components/dashboard/dashboardexperiencia/dashboardexperiencia.component';
 import { DashboardestudiosComponent } from './components/dashboard/dashboardestudios/dashboardestudios.component';
 import { DashboardproyectosComponent } from './components/dashboard/dashboardproyectos/dashboardproyectos.component';
+import { DashboardskillsComponent } from './components/dashboard/dashboardskills/dashboardskills.component';
 
 @NgModule({
   declarations: [
@@ -70,7 +71,8 @@ import { DashboardproyectosComponent } from './components/dashboard/dashboardpro
     BotonLogoutComponent,
     DashboardexperienciaComponent,
     DashboardestudiosComponent,
-    DashboardproyectosComponent
+    DashboardproyectosComponent,
+    DashboardskillsComponent
   ],
   imports: [
     BrowserModule,
