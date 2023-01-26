@@ -2,82 +2,64 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Skills } from 'src/app/entidades/Skills';
-import { SkillsService } from 'src/app/servicios/skills.service';
+import { Redes } from 'src/app/entidades/Redes';
+import { RedesService } from 'src/app/servicios/redes.service';
 
 @Component({
-  selector: 'app-dashboardskills',
-  templateUrl: './dashboardskills.component.html',
-  styleUrls: ['./dashboardskills.component.css']
+  selector: 'app-dashboardredes',
+  templateUrl: './dashboardredes.component.html',
+  styleUrls: ['./dashboardredes.component.css']
 })
-export class DashboardskillsComponent implements OnInit {
+export class DashboardredesComponent implements OnInit {
   //Crear e inicializar variables de instancia para almacenar los datos con los que trata el Servicio
   form: FormGroup;
-  skills: Skills[]=[];
+  redes: Redes[]=[];
   item: any;
   id?:number;
 
   constructor(
     //Inyectar el Servicio para tener acceso en la clase a los Métodos
     private http: HttpClient,
-    private servicio: SkillsService,
+    private servicio: RedesService,
     private formBuilder: FormBuilder,
     private ruta: Router
   )
   {
     this.form = this.formBuilder.group({
       id: [''],
-      habilidad: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(20)]],
-      porcentaje: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(3)]],
-      iconskill: [''],
-      tipo: ['', [Validators.required]],
+      urlred: ['', [Validators.required]],
+      iconred: ['', [Validators.required]],
     });
   }
 
-  get Habilidad() {
-    return this.form.get("habilidad");
+  get Urlred() {
+    return this.form.get("urlred");
   }
 
-  get HabilidadInvalido(){
-    return this.Habilidad?.errors && this.Habilidad?.touched;
+  get UrlredInvalido(){
+    return this.Urlred?.errors && this.Urlred?.touched;
   }
 
-  get HabilidadValido(){
-    return !this.Habilidad?.errors && this.Habilidad?.touched;
+  get UrlredValido(){
+    return !this.Urlred?.errors && this.Urlred?.touched;
   }
 
-  get Porcentaje() {
-    return this.form.get("porcentaje");
+  get Iconred() {
+    return this.form.get("iconred");
   }
 
-  get PorcentajeInvalido(){
-    return this.Porcentaje?.errors && this.Porcentaje?.touched;
+  get IconredInvalido(){
+    return this.Iconred?.errors && this.Iconred?.touched;
   }
 
-  get PorcentajeValido(){
-    return !this.Porcentaje?.errors && this.Porcentaje?.touched;
+  get IconredValido(){
+    return !this.Iconred?.errors && this.Iconred?.touched;
   }
-
-  get Iconskill() {
-    return this.form.get("iconskill");
-  }
-
- get Tipo() {
-    return this.form.get("tipo");
-  }
-
-  get TipoInvalido(){
-    return this.Tipo?.errors && this.Tipo?.touched;
-  }
-
-  get TipoValido(){
-    return !this.Tipo?.errors && this.Tipo?.touched;
-  }  
 
   listarItems(): void{
     this.servicio.listItems().subscribe({
       next: (data) => {
-        this.skills=data;
+        this.redes=data;
         console.log("Items cargados correctamente");
       },
       error: (e) => console.error(e),

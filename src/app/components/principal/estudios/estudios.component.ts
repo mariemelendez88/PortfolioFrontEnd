@@ -13,11 +13,11 @@ export class EstudiosComponent implements OnInit {
 
   constructor(
     //Inyectar el Servicio para tener acceso en la clase a los Métodos
-    private Sestudios: EstudiosService,
+    private servicio: EstudiosService,
     ) { }
 
     listarItems(): void{
-    this.Sestudios.listItems().subscribe(data =>{
+    this.servicio.listItems().subscribe(data =>{
       this.estudios=data;
     });
   }

@@ -1,0 +1,34 @@
+redes{
+    width:100%;
+}
+.titulo-red{
+    background: #ffffff;
+    text-align: center;
+    color: #2fa50b;
+}
+.linea-red{
+    padding: 1.5rem;
+    color: #3700ff;
+    line-height: 0;
+}
+.caja-red{
+    width: 90%;
+    margin-left: 5%;
+    align-self: center;
+    height: auto;
+    border: 0.5rem solid #ffffff80;
+    background: #d1cdcd;
+}
+
+.nuevo{
+    width: 8rem;
+    margin-top: 1rem;
+}
+.volver{
+    float: right;
+    margin-top: 1rem;
+}
+
+.linea{
+    color: black;
+}

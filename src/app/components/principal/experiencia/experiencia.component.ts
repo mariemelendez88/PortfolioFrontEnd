@@ -13,11 +13,11 @@ export class ExperienciaComponent implements OnInit {
 
   constructor(
     //Inyectar el Servicio para tener acceso en la clase a los Métodos
-    private Sexperiencia: ExperienciasService,
+    private servicio: ExperienciasService,
     ) { }
 
     listarItems(): void{
-    this.Sexperiencia.listItems().subscribe(data =>{
+    this.servicio.listItems().subscribe(data =>{
       this.experiencias=data;
     });
   }

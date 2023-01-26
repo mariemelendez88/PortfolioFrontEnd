@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Redes } from 'src/app/entidades/Redes';
 import { RedesService } from 'src/app/servicios/redes.service';
 
 @Component({
@@ -8,20 +9,21 @@ import { RedesService } from 'src/app/servicios/redes.service';
 })
 export class RedesComponent implements OnInit {
   //Crear e inicializar variables de instancia para almacenar los datos con los que trata el Servicio
-  redes: any;
+  redes: Redes[]=[];
 
   constructor(
     //Inyectar el Servicio para tener acceso en la clase a los Métodos
-    private RedesService: RedesService,
-  ) {  }
+    private servicio: RedesService,
+    ) { }
+
+    listarItems(): void{
+    this.servicio.listItems().subscribe(data =>{
+      this.redes=data;
+    });
+  }
 
   ngOnInit(): void {
-    //Esto es almacenar en la variebla de instancia los datos recuperados por el Servicio
-    this.RedesService.getRedes().subscribe(data => {
-      console.log(data);
-      //Definir info a mostrar
-      this.redes = data.redes;
-    })
+    this.listarItems();
   }
 
 }

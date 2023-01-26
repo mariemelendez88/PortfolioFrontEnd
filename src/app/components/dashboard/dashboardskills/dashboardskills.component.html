@@ -7,26 +7,127 @@
             </div>
         </div>
     </div>
-    <div class="col-12 col-md-6 caja-skill mt-3">
-        <table class="table table-bordered grocery-crud-table table-hover">
-            <thead>
-                <th>Tipo de Habilidad</th>
-                <th>Habilidad</th>
-                <th>Porcentaje</th>
-                <th>Ícono de fontawesome</th>
-            </thead>
-            <tbody>
-                <tr *ngFor="let item of skills" [ngSwitch]="item.tipo">
+    <ul class="row">
+        <!-- ..............FRONTEND -->
+            <div class="caja-skill">
+                <div class="text-center">
+                    <button type="button" class="btn btn-success nuevo text-center" data-bs-toggle="modal" data-bs-target="#ModalSkill">Nuevo Item</button>
+                    <button class="btn btn-dark volver" (click)="volver()" title="Volver a Dashboard"><i class="fa-solid fa-rotate-left"></i></button>
+                </div>
+                <h2 class="tit-item-skill mb-3">Frontend</h2> 
+                <div *ngFor="let item of skills" [ngSwitch]="item.tipo">
                     <div *ngSwitchCase="'Frontend'">
-                        <td>{{item.tipo}}</td>
-                        <td>{{item.habilidad}}</td>
-                        <td>{{item.porcentaje}}</td>
-                        <td>{{item.iconskill}}</td>
+                        <li class="item-skill mt-5 container row">
+                            <div class="col-9">
+                                <p><i [ngClass]="item.iconskill" class="fa-2xl"></i> {{item.habilidad}}</p>
+                                <div class="progress mb-4 " style="height: 1.5rem">
+                                    <div class="progress-bar progress-bar-striped progress-bar-animated skill-frontend" 
+                                    role="progressbar" aria-valuemin="0" aria-valuemax="100" 
+                                    style="height: 1.5rem" [style.width.%]="item.porcentaje">{{item.porcentaje}} %</div>
+                                </div>   
+                            </div>   
+                            <div class="col-3 text-center">
+                                <div>
+                                    <button class="btn btn-success m-2" (click)="item.id? cargarItem(item.id): null" data-bs-toggle="modal" data-bs-target="#ModalSkill" title="Editar">
+                                        <i class="fa-solid fa-pen-clip"></i>
+                                    </button>
+                                </div>
+                                <div>
+                                    <button class="btn btn-danger m-2" (click)="item.id ? borrarItem(item.id) : null" title="Eliminar">
+                                        <i class="fa-solid fa-trash-can"></i>
+                                    </button>
+                                </div>
+                            </div>          
+                        </li>
                     </div>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+                </div>  
+                
+    <!-- ..............BACKEND -->
+                <h2 class="tit-item-skill mb-3">Backend</h2>
+                <div *ngFor="let item of skills" [ngSwitch]="item.tipo">
+                    <div *ngSwitchCase="'Backend'">
+                        <li class="item-skill mt-5 container row">
+                            <div class="col-9">
+                                <p><i [ngClass]="item.iconskill" class="fa-2xl"></i> {{item.habilidad}}</p>
+                                <div class="progress mb-4 " style="height: 1.5rem">
+                                    <div class="progress-bar progress-bar-striped progress-bar-animated skill-backend" 
+                                    role="progressbar" aria-valuemin="0" aria-valuemax="100" 
+                                    style="height: 1.5rem" [style.width.%]="item.porcentaje">{{item.porcentaje}} %</div>
+                                </div>   
+                            </div>   
+                            <div class="col-3 text-center">
+                                <div>
+                                    <button class="btn btn-success m-2" (click)="item.id? cargarItem(item.id): null" data-bs-toggle="modal" data-bs-target="#ModalSkill" title="Editar">
+                                        <i class="fa-solid fa-pen-clip"></i>
+                                    </button>
+                                </div>
+                                <div>
+                                    <button class="btn btn-danger m-2" (click)="item.id ? borrarItem(item.id) : null" title="Eliminar">
+                                        <i class="fa-solid fa-trash-can"></i>
+                                    </button>
+                                </div>
+                            </div>          
+                        </li>
+                    </div>
+                </div>  
+    <!-- ..............IDIOMAS -->
+                <h2 class="tit-item-skill mb-3">Idiomas</h2>
+                <div *ngFor="let item of skills" [ngSwitch]="item.tipo">
+                    <div *ngSwitchCase="'Idioma'">
+                        <li class="item-skill mt-5 container row">
+                            <div class="col-9">
+                                <p><i [ngClass]="item.iconskill" class="fa-2xl"></i> {{item.habilidad}}</p>
+                                <div class="progress mb-4 " style="height: 1.5rem">
+                                    <div class="progress-bar progress-bar-striped progress-bar-animated skill-idiomas" 
+                                    role="progressbar" aria-valuemin="0" aria-valuemax="100" 
+                                    style="height: 1.5rem" [style.width.%]="item.porcentaje">{{item.porcentaje}} %</div>
+                                </div>   
+                            </div>   
+                            <div class="col-3 text-center">
+                                <div>
+                                    <button class="btn btn-success m-2" (click)="item.id? cargarItem(item.id): null" data-bs-toggle="modal" data-bs-target="#ModalSkill" title="Editar">
+                                        <i class="fa-solid fa-pen-clip"></i>
+                                    </button>
+                                </div>
+                                <div>
+                                    <button class="btn btn-danger m-2" (click)="item.id ? borrarItem(item.id) : null" title="Eliminar">
+                                        <i class="fa-solid fa-trash-can"></i>
+                                    </button>
+                                </div>
+                            </div>          
+                        </li>
+                    </div>
+                </div>  
+    <!-- ..............OTROS -->
+                <h2 class="tit-item-skill mb-3">Otros</h2>
+                <div *ngFor="let item of skills" [ngSwitch]="item.tipo">
+                    <div *ngSwitchCase="'Otro'">
+                        <li class="item-skill mt-5 container row">
+                            <div class="col-9">
+                                <p><i [ngClass]="item.iconskill" class="fa-2xl"></i> {{item.habilidad}}</p>
+                                <div class="progress mb-4 " style="height: 1.5rem">
+                                    <div class="progress-bar progress-bar-striped progress-bar-animated skill-otros" 
+                                    role="progressbar" aria-valuemin="0" aria-valuemax="100" 
+                                    style="height: 1.5rem" [style.width.%]="item.porcentaje">{{item.porcentaje}} %</div>
+                                </div>   
+                            </div>   
+                            <div class="col-3 text-center">
+                                <div>
+                                    <button class="btn btn-success m-2" (click)="item.id? cargarItem(item.id): null" data-bs-toggle="modal" data-bs-target="#ModalSkill" title="Editar">
+                                        <i class="fa-solid fa-pen-clip"></i>
+                                    </button>
+                                </div>
+                                <div>
+                                    <button class="btn btn-danger m-2" (click)="item.id ? borrarItem(item.id) : null" title="Eliminar">
+                                        <i class="fa-solid fa-trash-can"></i>
+                                    </button>
+                                </div>
+                            </div>          
+                        </li>
+                    </div>
+                </div>  
+            </div>
+        </ul>
 <!-- ..............Fin Skills.................. -->
 </section>
 
@@ -43,8 +144,8 @@
                 <form [formGroup]="form">
                     
                     <div class="mb-3 row">
-                        <label for="formFileSm" class="form-label">Tipo</label>
-                        <input type="text" class="form-control" id="tipo" formControlName="tipo" name="" placeholder="HTML, Francés, Liderazgo..."
+                        <label for="formFileSm" class="form-label">Tipo (Frontend, Backend, Idioma, Otro)</label>
+                        <input type="text" class="form-control" id="tipo" formControlName="tipo" name="" placeholder="Frontend, Backend, Idioma, Otro"
                         [ngClass]="{'is-invalid': TipoInvalido, 'is-valid': TipoValido}">
                         
                         <!-- Se verifica si cumple con el formato -->
@@ -57,16 +158,6 @@
                             </p>
                         </div>
                     </div>
-                    <!-- <div class="mb-3 row">
-                        <label for="formFileSm" class="form-label">Tipo de habilidad</label>
-                        <select class="form-select form-select-sm" id="tipo" formControlName="tipo" name="" 
-                            aria-label=".form-select-sm example" aria-placeholder="Seleccionar">
-                            <option value="0">Selecciona una opción</option>
-                            <option *ngFor="let dato of menu">
-                                {{dato}}
-                            </option>
-                        </select>
-                    </div> -->
                     <div class="mb-3 row">
                         <label for="formFileSm" class="form-label">Habilidad</label>
                         <input type="text" class="form-control" id="habilidad" formControlName="habilidad" name="" placeholder="HTML, Francés, Liderazgo..."

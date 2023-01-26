@@ -25,8 +25,6 @@ import { BannerComponent } from './components/principal/banner/banner.component'
 import { DashAcercademiComponent } from './modales/dash-acercademi/dash-acercademi.component';
 import { DashBannerComponent } from './modales/dash-banner/dash-banner.component';
 import { DashPerfilComponent } from './modales/dash-perfil/dash-perfil.component';
-import { DashProyectosComponent } from './modales/dash-proyectos/dash-proyectos.component';
-import { DashSkillsComponent } from './modales/dash-skills/dash-skills.component';
 import { DashRedesComponent } from './modales/dash-redes/dash-redes.component';
 import { DashReferenciasComponent } from './modales/dash-referencias/dash-referencias.component';
 import { ErrorComponent } from './components/error/error.component';
@@ -39,6 +37,7 @@ import { DashboardexperienciaComponent } from './components/dashboard/dashboarde
 import { DashboardestudiosComponent } from './components/dashboard/dashboardestudios/dashboardestudios.component';
 import { DashboardproyectosComponent } from './components/dashboard/dashboardproyectos/dashboardproyectos.component';
 import { DashboardskillsComponent } from './components/dashboard/dashboardskills/dashboardskills.component';
+import { DashboardredesComponent } from './components/dashboard/dashboardredes/dashboardredes.component';
 
 @NgModule({
   declarations: [
@@ -59,8 +58,6 @@ import { DashboardskillsComponent } from './components/dashboard/dashboardskills
     DashAcercademiComponent,
     DashBannerComponent,
     DashPerfilComponent,
-    DashProyectosComponent,
-    DashSkillsComponent,
     DashRedesComponent,
     DashReferenciasComponent,
     ErrorComponent,
@@ -72,7 +69,8 @@ import { DashboardskillsComponent } from './components/dashboard/dashboardskills
     DashboardexperienciaComponent,
     DashboardestudiosComponent,
     DashboardproyectosComponent,
-    DashboardskillsComponent
+    DashboardskillsComponent,
+    DashboardredesComponent
   ],
   imports: [
     BrowserModule,

@@ -13,11 +13,11 @@ export class ProyectosComponent implements OnInit {
 
   constructor(
     //Inyectar el Servicio para tener acceso en la clase a los Métodos
-    private Sproyecto: ProyectosService,
+    private servicio: ProyectosService,
     ) { }
 
     listarItems(): void{
-    this.Sproyecto.listItems().subscribe(data =>{
+    this.servicio.listItems().subscribe(data =>{
       this.proyectos=data;
     });
   }

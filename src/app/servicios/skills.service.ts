@@ -21,12 +21,12 @@ export class SkillsService {
     return this.httpClient.get<Skills>(this.url + `/${id}`);
   }
 
-  public saveItem(estudio: Skills): Observable<any>{
-    return this.httpClient.post<any>(this.url, estudio);
+  public saveItem(skill: Skills): Observable<any>{
+    return this.httpClient.post<any>(this.url, skill);
   }
 
-  public updateItem(estudio: Skills): Observable<any>{
-    return this.httpClient.put<Skills>(this.url, estudio);
+  public updateItem(skill: Skills): Observable<any>{
+    return this.httpClient.put<Skills>(this.url, skill);
   }
 
   public deleteItem(id: number): Observable<Skills>{

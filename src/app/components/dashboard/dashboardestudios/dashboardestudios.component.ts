@@ -20,7 +20,7 @@ export class DashboardestudiosComponent implements OnInit {
   constructor(
     //Inyectar el Servicio para tener acceso en la clase a los Métodos
     private http: HttpClient,
-    private Sestudios: EstudiosService,
+    private servicio: EstudiosService,
     private formBuilder: FormBuilder,
     private ruta: Router
   ) 
@@ -98,11 +98,15 @@ export class DashboardestudiosComponent implements OnInit {
   }  
 
   listarItems(): void{
-    this.Sestudios.listItems().subscribe(data =>{
-      this.estudios=data;
-      console.log("Estudios cargados correctamente");
-    });
-  }
+    this.servicio.listItems().subscribe({
+      next: (data) => {
+        this.estudios=data;
+        console.log("Items cargados correctamente");
+      },
+      error: (e) => console.error(e),
+      complete: () => console.info('complete')
+  })
+}
 
   
   ngOnInit(): void {
@@ -110,37 +114,46 @@ export class DashboardestudiosComponent implements OnInit {
   }
 
   cargarItem(id: number){
-    this.Sestudios.getById(id).subscribe(
-      data => {
-        this.form.setValue(data);
+    this.servicio.getById(id).subscribe({
+        next: (data) => {
+          this.form.setValue(data);
+        },
+        error: (e) => console.error(e),
+        complete: () => console.info('complete')
       });
+    console.log("Se cargó correctamente el item");
     }
-
   
   guardarItem() {
     let item = this.form.value;
     if (item.id == '') {
-      this.Sestudios.saveItem(item).subscribe((data: any) => {
-          alert("Se añadió correctamente el item");
-          this.listarItems();
-          this.form.reset();
-      });
-      window.location.reload();
-    } else {
-      this.Sestudios.updateItem(item).subscribe((data: any) => {
-          alert("Se modificó correctamente el item");
+      this.servicio.saveItem(item).subscribe({
+        next: (data) => {
           this.limpiar();
+        },
+        error: (e) => console.error(e),
+        complete: () => console.info('complete')
       });
       window.location.reload();
+      console.log("Se añadió correctamente el item");
+    } else {
+      this.servicio.updateItem(item).subscribe({
+        next: (data) => {
+          this.limpiar();
+        },
+        error: (e) => console.error(e),
+        complete: () => console.info('complete')
+      });
+      window.location.reload();
+      console.log("Se modificó correctamente el item");
     }
   }
 
   borrarItem(id: number) {
     if (confirm("Confirme si desea eliminar este ítem")) {
-      this.Sestudios.deleteItem(id).subscribe(data => {
-        alert("Se eliminó correctamente el item: " + id);
-      });
+      this.servicio.deleteItem(id).subscribe(data => {});
       window.location.reload();
+      console.log("Se eliminó correctamente el item");
     }
   }
        
