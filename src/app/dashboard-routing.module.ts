@@ -3,8 +3,10 @@ import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { DashboardestudiosComponent } from './components/dashboard/dashboardestudios/dashboardestudios.component';
 import { DashboardexperienciaComponent } from './components/dashboard/dashboardexperiencia/dashboardexperiencia.component';
+import { DashboardpersonaComponent } from './components/dashboard/dashboardpersona/dashboardpersona.component';
 import { DashboardproyectosComponent } from './components/dashboard/dashboardproyectos/dashboardproyectos.component';
 import { DashboardredesComponent } from './components/dashboard/dashboardredes/dashboardredes.component';
+import { DashboardreferenciasComponent } from './components/dashboard/dashboardreferencias/dashboardreferencias.component';
 import { DashboardskillsComponent } from './components/dashboard/dashboardskills/dashboardskills.component';
 
 const routes: Routes = [
@@ -16,7 +18,9 @@ const routes: Routes = [
       {path: 'dashboardestudios', component: DashboardestudiosComponent},
       {path: 'dashboardproyectos', component: DashboardproyectosComponent},
       {path: 'dashboardskills', component: DashboardskillsComponent},
-      {path: 'dashboardredes', component: DashboardredesComponent}
+      {path: 'dashboardredes', component: DashboardredesComponent},
+      {path: 'dashboardreferencias', component: DashboardreferenciasComponent},
+      {path: 'dashboardpersona', component: DashboardpersonaComponent}
     ]
   },
 ]

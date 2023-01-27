@@ -5,11 +5,11 @@
             <h1 class="text-center linea-ref">REFERENCIAS</h1>
         </div>
         <div class="row g-4 text-center">
-            <div class="col-12 col-lg-4 text-center" *ngFor="let referencia of referencias">
+            <div class="col-12 col-lg-4 text-center" *ngFor="let item of referencias">
                 <div class="mt-3 mb-2 caja-ref text-center">
-                    <h3>{{referencia.nombre}} {{referencia.apellido}}</h3>
-                    <h5>{{referencia.telefono}}</h5>
-                    <h5>{{referencia.email}}</h5>
+                    <h3>{{item.nombre}} {{item.apellido}}</h3>
+                    <h5>{{item.telefono}}</h5>
+                    <h5>{{item.email}}</h5>
                 </div>
             </div>
             <div class="col-1"></div>

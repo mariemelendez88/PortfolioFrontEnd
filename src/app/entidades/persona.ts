@@ -7,14 +7,13 @@ export class Persona {
     acercade: string;
     imgBanner: string;
     imgPfp: string;
-    descripcionPfp: string;
     cvpdf: string;
     textofooter: string;
     email: string;
     password: string;
     
     constructor(nombre: string, apellido: string, titulo: string, frase: string, acercade: string, imgBanner: string, 
-        imgPfp: string, descripcionPfp: string, cvpdf: string, textofooter: string, email: string, password: string) {
+        imgPfp: string, cvpdf: string, textofooter: string, email: string, password: string) {
 		this.nombre = nombre;
 		this.apellido = apellido;
 		this.titulo = titulo;
@@ -22,7 +21,6 @@ export class Persona {
 		this.acercade = acercade;
 		this.imgBanner = imgBanner;
 		this.imgPfp = imgPfp;
-		this.descripcionPfp = descripcionPfp;
 		this.cvpdf = cvpdf;
 		this.textofooter = textofooter;
         this.email = email;

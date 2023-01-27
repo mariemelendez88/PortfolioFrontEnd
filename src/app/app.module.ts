@@ -25,8 +25,6 @@ import { BannerComponent } from './components/principal/banner/banner.component'
 import { DashAcercademiComponent } from './modales/dash-acercademi/dash-acercademi.component';
 import { DashBannerComponent } from './modales/dash-banner/dash-banner.component';
 import { DashPerfilComponent } from './modales/dash-perfil/dash-perfil.component';
-import { DashRedesComponent } from './modales/dash-redes/dash-redes.component';
-import { DashReferenciasComponent } from './modales/dash-referencias/dash-referencias.component';
 import { ErrorComponent } from './components/error/error.component';
 import { IndexComponent } from './components/index/index.component';
 import { NavbarDashboardComponent } from './components/menu/navbar-dashboard/navbar-dashboard.component';
@@ -38,6 +36,8 @@ import { DashboardestudiosComponent } from './components/dashboard/dashboardestu
 import { DashboardproyectosComponent } from './components/dashboard/dashboardproyectos/dashboardproyectos.component';
 import { DashboardskillsComponent } from './components/dashboard/dashboardskills/dashboardskills.component';
 import { DashboardredesComponent } from './components/dashboard/dashboardredes/dashboardredes.component';
+import { DashboardreferenciasComponent } from './components/dashboard/dashboardreferencias/dashboardreferencias.component';
+import { DashboardpersonaComponent } from './components/dashboard/dashboardpersona/dashboardpersona.component';
 
 @NgModule({
   declarations: [
@@ -58,8 +58,6 @@ import { DashboardredesComponent } from './components/dashboard/dashboardredes/d
     DashAcercademiComponent,
     DashBannerComponent,
     DashPerfilComponent,
-    DashRedesComponent,
-    DashReferenciasComponent,
     ErrorComponent,
     IndexComponent,
     NavbarDashboardComponent,
@@ -70,7 +68,9 @@ import { DashboardredesComponent } from './components/dashboard/dashboardredes/d
     DashboardestudiosComponent,
     DashboardproyectosComponent,
     DashboardskillsComponent,
-    DashboardredesComponent
+    DashboardredesComponent,
+    DashboardreferenciasComponent,
+    DashboardpersonaComponent
   ],
   imports: [
     BrowserModule,

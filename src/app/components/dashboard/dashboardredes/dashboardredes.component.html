@@ -15,13 +15,13 @@
                     <div *ngFor="let item of redes">
                         <li class="list-group-item mt-5">
                             <div class="container row">
-                                <div class="col-8">
+                                <div class="col-8 col-md-10">
                                     <p>Link de la red social: {{item.urlred}}</p>
                                     <p>Ícono de fontawesome de la red: {{item.iconred}} <i [ngClass]="item.iconred" class="fa-lg text-white m-0 p-0"></i></p>
                                 </div>
-                                <div class="col-2 text-center">
+                                <div class="col-1 col-md-2 text-center">
                                     <div>
-                                        <button class="btn btn-success m-2" (click)="item.id? cargarItem(item.id): null" data-bs-toggle="modal" data-bs-target="#ModalExperiencia" title="Editar">
+                                        <button class="btn btn-success m-2" (click)="item.id? cargarItem(item.id): null" data-bs-toggle="modal" data-bs-target="#ModalRedes" title="Editar">
                                             <i class="fa-solid fa-pen-clip"></i>
                                         </button>
                                     </div>
@@ -83,6 +83,7 @@
                                 Debe ser de 2 o más caracteres.
                             </p>
                         </div>
+                        <p>Haga <a href="https://fontawesome.com/search">click aquí</a> para buscar el ícono</p>
                     </div>
                     <input type="hidden" name="" id="id">
                     <div class="modal-footer">

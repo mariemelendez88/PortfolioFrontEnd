@@ -3,33 +3,33 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 //Esto es para poder hacer peticiones
 import { HttpClient } from '@angular/common/http';
-import { Persona } from '../entidades/persona';
+import { Persona } from '../entidades/Persona';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PersonaService {
-  url = 'http://localhost:8080/persona/'
+  url = 'http://localhost:8080/persona';
   constructor(private httpClient:HttpClient) { }
 
-  public list(): Observable<Persona[]>{
-    return this.httpClient.get<Persona[]>(this.url + 'lista');
+  // public listItems(): Observable<Persona[]>{
+  //   return this.httpClient.get<Persona[]>(this.url);
+  // }
+
+  public getById(id: number): Observable<any>{
+    return this.httpClient.get<Persona>(this.url + `/${id}`);
   }
 
-  public getById(id: number): Observable<Persona>{
-    return this.httpClient.get<Persona>(this.url + `ver/${id}`);
+  // public saveItem(persona: Persona): Observable<any>{
+  //   return this.httpClient.post<any>(this.url, persona);
+  // }
+
+  public updateItem(persona: Persona): Observable<any>{
+    return this.httpClient.put<Persona>(this.url, persona);
   }
 
-  public save(persona: Persona): Observable<any>{
-    return this.httpClient.post<any>(this.url + 'crear', persona);
-  }
-
-  public update(persona: Persona): Observable<any>{
-    return this.httpClient.post<any>(this.url + 'editar', persona);
-  }
-
-  public delete(id: number): Observable<any>{
-    return this.httpClient.delete<any>(this.url + `eliminar/${id}`);
-  }
+  // public deleteItem(id: number): Observable<Persona>{
+  //   return this.httpClient.delete<any>(this.url + `/${id}`);
+  // }
 
 }

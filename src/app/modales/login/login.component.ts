@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Persona } from 'src/app/entidades/persona';
+import { Persona } from 'src/app/entidades/Persona';
 import { AutenticacionService } from 'src/app/servicios/autenticacion.service';
 
 @Component({
@@ -63,7 +63,7 @@ export class LoginComponent implements OnInit {
     if (this.form.valid){
       //Llamamos a nuestro servicio para enviar los datos al servidor
       //Tambien podríamos ejecutar alguna lógica extra
-      let persona:Persona = new Persona("", "", "", "", "", "", "", "", "", "", this.form.get("email")?.value, this.form.get("password")?.value);
+      let persona:Persona = new Persona("", "", "", "", "", "", "", "", "", this.form.get("email")?.value, this.form.get("password")?.value);
       this.autenticarService.loginUser(persona).subscribe(data => {
         console.log("DATA:" + JSON.stringify(data));
         this.ruta.navigate(['/dashboard']);},
