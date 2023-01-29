@@ -1,8 +1,7 @@
 {
     "persona": {
-        "imgBanner": "/assets/img/banner2.png",
-        "imgPfp": "/assets/img/pfp.png",
-        "descripcionPfp": "engineer, full stack",
+        "img_banner": "/assets/img/banner2.png",
+        "img_pfp": "/assets/img/pfp.png",
         "nombre": "Marie",
         "apellido": "Melendez",
         "titulo": "Full Stack Developer",
