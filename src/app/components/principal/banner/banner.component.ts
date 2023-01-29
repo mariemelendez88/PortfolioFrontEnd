@@ -9,7 +9,7 @@ import { PersonaService } from 'src/app/servicios/persona.service';
 })
 export class BannerComponent implements OnInit {
   //Crear e inicializar variables de instancia para almacenar los datos con los que trata el Servicio
-  persona: any;
+  persona: Persona = new Persona("", "", "", "", "", "", "", "", "","","");
 
   constructor(
     //Inyectar el Servicio para tener acceso en la clase a los Métodos
@@ -17,17 +17,18 @@ export class BannerComponent implements OnInit {
     ) { }
 
     
-    ngOnInit(): void {
-    }
-  
-    cargarItem(id: number){
-      this.servicio.getById(id).subscribe({
-          next: (data) => {
-            this.persona=data;
-          },
-          error: (e) => console.error(e),
-          complete: () => console.info('complete')
-        });
-      console.log("Se cargó correctamente el item");
-      }
+  ngOnInit(): void {
+    this.cargarItem();
   }
+
+  cargarItem(){
+    this.servicio.getById(1).subscribe({
+        next: (data) => {
+          this.persona=data;
+        },
+        error: (e) => console.error(e),
+        complete: () => console.info('complete')
+      });
+    console.log("Se cargó correctamente el item");
+    }
+}

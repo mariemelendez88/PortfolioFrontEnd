@@ -1,11 +1,4 @@
 /* ...............Inicio de Acerca de Mi*/
-/* ...............Inicio de Banner*/
-.banner{
-    width: 100%;
-    background-size: cover;
-    z-index: 1;
-}
-/* ...............Fin de Banner*/
 .titulo{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     -webkit-text-stroke: 0.1rem #0000ff;

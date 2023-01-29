@@ -1,25 +1,29 @@
 /* ...............Inicio de Acerca de Mi*/
-.titulo{
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    -webkit-text-stroke: 0.1rem #0000ff;
-    color: #ffffff;
-}
-.info{
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    -webkit-text-stroke: 0.05rem #ffffff;
-    color: #730989;
-}
-.img{
-    margin-top: -2.5rem;
-    width: 40%;
-}
+/* ...............Inicio de Banner*/
+
 .about{
-    margin-top: 10rem;
-    background-repeat: no-repeat;
-    background-size: 100%;
-    margin-bottom: 7.5rem;
-    width: 100%;
-    margin: 0;
-    padding: 0;
+    width:100%;
+}
+.titulo-about{
+    background: #ffffff;
+    text-align: center;
+    color: #2fa50b;
+}
+.linea-about{
+    padding: 1.5rem;
+    color: #3700ff;
+    line-height: 0;
+}
+.caja-about{
+    width: 70%;
+    margin-left: 15%;
+    align-self: center;
+    height: auto;
+    border: 0.5rem solid #ffffff80;
+    background: #d1cdcd;
+}
+.volver{
+    float: right;
+    margin-top: 1rem;
 }
 /* ...............Fin de Acerca de Mi*/

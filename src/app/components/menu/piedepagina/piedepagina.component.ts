@@ -9,21 +9,26 @@ import { PersonaService } from 'src/app/servicios/persona.service';
 })
 export class PiedepaginaComponent implements OnInit {
   //Crear e inicializar variables de instancia para almacenar los datos con los que trata el Servicio
-  persona: Persona|any=null;
+  persona: Persona = new Persona("", "", "", "", "", "", "", "", "","","");
 
   constructor(
     //Inyectar el Servicio para tener acceso en la clase a los Métodos
     private servicio: PersonaService,
     ) { }
 
-    listarItems(): void{
-      this.servicio.getById(1).subscribe(data =>{
-        this.persona=data;
-    });
-  }
-
+    
   ngOnInit(): void {
-    this.listarItems();
+    this.cargarItem();
   }
 
+  cargarItem(){
+    this.servicio.getById(1).subscribe({
+        next: (data) => {
+          this.persona=data;
+        },
+        error: (e) => console.error(e),
+        complete: () => console.info('complete')
+      });
+    console.log("Se cargó correctamente el item");
+    }
 }

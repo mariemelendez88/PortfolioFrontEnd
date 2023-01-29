@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Persona } from 'src/app/entidades/Persona';
 import { PersonaService } from 'src/app/servicios/persona.service';
 
 @Component({
@@ -12,7 +13,7 @@ import { PersonaService } from 'src/app/servicios/persona.service';
 export class DashboardpersonaComponent implements OnInit {
   //Crear e inicializar variables de instancia para almacenar los datos con los que trata el Servicio
   form: FormGroup;
-  persona: any;
+  persona: Persona = new Persona("", "", "", "", "", "", "", "", "","","");
   id?:number;
 
   constructor(
@@ -30,10 +31,12 @@ export class DashboardpersonaComponent implements OnInit {
         titulo: ['', [Validators.required, Validators.minLength(2)]],
         frase: ['', [Validators.required, Validators.minLength(2)]],
         acercade: ['', [Validators.required, Validators.minLength(2)]],
-        imgBanner: ['', [Validators.required]],
-        imgPfp: ['', [Validators.required]],
+        img_banner: ['', [Validators.required]],
+        img_pfp: ['', [Validators.required]],
         cvpdf: ['', [Validators.required]],
         textofooter: ['', [Validators.required]],
+        email: [''],
+        password: [''],
       });
     }
   
@@ -61,28 +64,98 @@ export class DashboardpersonaComponent implements OnInit {
       return !this.Apellido?.errors && this.Apellido?.touched;
     }
   
-    get Telefono() {
-      return this.form.get("telefono");
+    get Titulo() {
+      return this.form.get("titulo");
     }
   
-   get Email() {
-      return this.form.get("email");
+    get TituloInvalido(){
+      return this.Titulo?.errors && this.Titulo?.touched;
     }
   
-    get EmailInvalido(){
-      return this.Email?.errors && this.Email?.touched;
+    get TituloValido(){
+      return !this.Titulo?.errors && this.Titulo?.touched;
+    }
+
+    get Frase() {
+      return this.form.get("frase");
     }
   
-    get EmailValido(){
-      return !this.Email?.errors && this.Email?.touched;
-    }  
+    get FraseInvalido(){
+      return this.Frase?.errors && this.Frase?.touched;
+    }
+  
+    get FraseValido(){
+      return !this.Frase?.errors && this.Frase?.touched;
+    }
+
+    get Acercade() {
+      return this.form.get("acercade");
+    }
+  
+    get AcercadeInvalido(){
+      return this.Acercade?.errors && this.Acercade?.touched;
+    }
+  
+    get AcercadeValido(){
+      return !this.Cvpdf?.errors && this.Cvpdf?.touched;
+    }
+
+    get Cvpdf() {
+      return this.form.get("cvpdf");
+    }
+  
+    get CvpdfInvalido(){
+      return this.Cvpdf?.errors && this.Cvpdf?.touched;
+    }
+  
+    get CvpdfValido(){
+      return !this.Cvpdf?.errors && this.Cvpdf?.touched;
+    }
+
+    get Textofooter() {
+      return this.form.get("textofooter");
+    }
+  
+    get TextofooterInvalido(){
+      return this.Textofooter?.errors && this.Textofooter?.touched;
+    }
+  
+    get TextofooterValido(){
+      return !this.Textofooter?.errors && this.Textofooter?.touched;
+    }
+
+    get Img_banner() {
+      return this.form.get("img_banner");
+    }
+  
+    get Img_bannerInvalido(){
+      return this.Img_banner?.errors && this.Img_banner?.touched;
+    }
+  
+    get Img_bannerValido(){
+      return !this.Img_banner?.errors && this.Img_banner?.touched;
+    }
+
+    get Img_pfp() {
+      return this.form.get("img_pfp");
+    }
+  
+    get Img_pfpInvalido(){
+      return this.Img_pfp?.errors && this.Img_pfp?.touched;
+    }
+  
+    get Img_pfpValido(){
+      return !this.Img_pfp?.errors && this.Img_pfp?.touched;
+    }
   
     ngOnInit(): void {
+      this.cargarItem();
     }
   
-    cargarItem(id: number){
-      this.servicio.getById(id).subscribe({
+    cargarItem(){
+      this.servicio.getById(1).subscribe({
           next: (data) => {
+            this.persona=data;
             this.form.setValue(data);
           },
           error: (e) => console.error(e),

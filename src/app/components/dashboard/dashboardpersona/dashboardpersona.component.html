@@ -1,10 +1,33 @@
 <!-- ..............Inicio Seccion Acerca de Mi -->
-<section id="about">
-    <app-banner></app-banner>
+<section id="dashboardpersona" class="about mt-5">
+    <div class="container-fluid">
+        <div>
+            <div class="titulo-about">
+                <h1 class="text-center linea-about">PERSONA</h1>
+            </div>
+        </div>
+    </div>
+    <div class="caja-about mt-3 mb-2 row">
+        <div class="text-center">
+            <button class="btn btn-dark volver" (click)="volver()" title="Volver a Dashboard"><i class="fa-solid fa-rotate-left"></i></button>
+        </div>
+        <div class="col-8">
+            <h2 class="tit-item-skill mb-3">Imagen de Banner</h2> 
+            <img [src]="persona.img_banner" class="w-75 img-fluid banner" alt="Imagen de Banner">
+        </div>
+        <div class="col-3 text-center">
+            <div>
+                <button class="btn btn-success m-2" (click)="persona.id? cargarItem(persona.id): null" data-bs-toggle="modal" data-bs-target="#ModalSkill" title="Editar">
+                    <i class="fa-solid fa-pen-clip"></i>
+                </button>
+            </div>
+        </div> 
+    </div>
+    
     <div class="container-fluid text-center card-body row">
         <div class="col-0 col-md-1"></div>
         <div class="col-12 col-md-3">
-            <img class="rounded-circle img" [src]="persona.imgPfp" alt="foto de perfil">
+            <img class="rounded-circle img" [src]="persona.img_pfp" alt="foto de perfil">
             <h1 class="titulo">{{persona.nombre}} {{persona.apellido}}</h1>
             <h4 class="info">{{persona.titulo}}</h4>
         </div>
