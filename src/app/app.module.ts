@@ -21,10 +21,6 @@ import { ReferenciasComponent } from './components/principal/referencias/referen
 import { NavbarComponent } from './components/menu/navbar/navbar.component';
 import { PiedepaginaComponent } from './components/menu/piedepagina/piedepagina.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
-import { BannerComponent } from './components/principal/banner/banner.component';
-import { DashAcercademiComponent } from './modales/dash-acercademi/dash-acercademi.component';
-import { DashBannerComponent } from './modales/dash-banner/dash-banner.component';
-import { DashPerfilComponent } from './modales/dash-perfil/dash-perfil.component';
 import { ErrorComponent } from './components/error/error.component';
 import { IndexComponent } from './components/index/index.component';
 import { NavbarDashboardComponent } from './components/menu/navbar-dashboard/navbar-dashboard.component';
@@ -54,10 +50,6 @@ import { DashboardpersonaComponent } from './components/dashboard/dashboardperso
     NavbarComponent,
     PiedepaginaComponent,
     DashboardComponent,
-    BannerComponent,
-    DashAcercademiComponent,
-    DashBannerComponent,
-    DashPerfilComponent,
     ErrorComponent,
     IndexComponent,
     NavbarDashboardComponent,

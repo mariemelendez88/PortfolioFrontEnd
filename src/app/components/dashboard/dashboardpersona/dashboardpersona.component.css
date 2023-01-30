@@ -1,6 +1,15 @@
 /* ...............Inicio de Acerca de Mi*/
+.img{
+    margin-top: -2.5rem;
+    width: 40%;
+}
+/* ...............Fin de Acerca de Mi*/
 /* ...............Inicio de Banner*/
-
+.banner{
+    width: 100%;
+    background-size: cover;
+}
+/* ...............Fin de Banner*/
 .about{
     width:100%;
 }
@@ -15,8 +24,8 @@
     line-height: 0;
 }
 .caja-about{
-    width: 70%;
-    margin-left: 15%;
+    width: 90%;
+    margin-left: 5%;
     align-self: center;
     height: auto;
     border: 0.5rem solid #ffffff80;
@@ -24,6 +33,10 @@
 }
 .volver{
     float: right;
+    margin-top: 1rem;
+}
+.boton{
+    width: 8rem;
     margin-top: 1rem;
 }
 /* ...............Fin de Acerca de Mi*/
