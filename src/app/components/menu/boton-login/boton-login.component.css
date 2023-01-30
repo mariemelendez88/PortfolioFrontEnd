@@ -5,4 +5,7 @@ i.fa-solid.fa-right-to-bracket.fa-lg.text-white:hover{
 .list-group-item{
     padding: 0.3rem;
 }
+.error{
+    color: #dc143c;
+}
 /* ...............Fin de Login*/

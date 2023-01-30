@@ -9,7 +9,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 //Importar los componentes
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LoginComponent } from './modales/login/login.component';
 import { LogoutComponent } from './modales/logout/logout.component';
 import { RedesComponent } from './components/menu/redes/redes.component';
 import { AcercademiComponent } from './components/principal/acercademi/acercademi.component';
@@ -24,7 +23,6 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ErrorComponent } from './components/error/error.component';
 import { IndexComponent } from './components/index/index.component';
 import { NavbarDashboardComponent } from './components/menu/navbar-dashboard/navbar-dashboard.component';
-import { LogoApComponent } from './components/menu/logo-ap/logo-ap.component';
 import { BotonLoginComponent } from './components/menu/boton-login/boton-login.component';
 import { BotonLogoutComponent } from './components/menu/boton-logout/boton-logout.component';
 import { DashboardexperienciaComponent } from './components/dashboard/dashboardexperiencia/dashboardexperiencia.component';
@@ -38,7 +36,6 @@ import { DashboardpersonaComponent } from './components/dashboard/dashboardperso
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent,
     LogoutComponent,
     RedesComponent,
     AcercademiComponent,
@@ -53,7 +50,6 @@ import { DashboardpersonaComponent } from './components/dashboard/dashboardperso
     ErrorComponent,
     IndexComponent,
     NavbarDashboardComponent,
-    LogoApComponent,
     BotonLoginComponent,
     BotonLogoutComponent,
     DashboardexperienciaComponent,
