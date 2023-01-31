@@ -4,15 +4,16 @@
             <!-- ...............Inicio de Logo Argentina Programa -->
                 <div class="col-3">
                     <a class="navbar-brand m-0 p-0" href="https://argentinaprograma.inti.gob.ar/" target="_blank">
-                        <img src="../assets/img/AP-logo.png" alt="Logo Argentina Programa" width="100%">
+                        <img src="../assets/img/AP-logo.png" alt="Logo Argentina Programa" width="150rem">
                     </a>
                 </div>
             <!-- ...............Fin de Logo Argentina Programa -->
             <ul class="list-group list-group-horizontal">
-                <app-boton-logout></app-boton-logout>
+                <li class="list-group-item">
+                    <i class="fa-solid fa-right-from-bracket fa-lg text-white" 
+                    type="button" (click)="salir()" data-bs-toggle="modal" data-bs-dismiss="modal"></i>
+                </li>
             </ul>
         </div>
     </nav>
 </header>
-
-<app-logout></app-logout>

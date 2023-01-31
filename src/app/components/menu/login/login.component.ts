@@ -5,11 +5,11 @@ import { Persona } from 'src/app/entidades/Persona';
 import { AutenticacionService } from 'src/app/servicios/autenticacion.service';
 
 @Component({
-  selector: 'app-boton-login',
-  templateUrl: './boton-login.component.html',
-  styleUrls: ['./boton-login.component.css']
+  selector: 'app-login',
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.css']
 })
-export class BotonLoginComponent implements OnInit {
+export class LoginComponent implements OnInit {
   form: FormGroup;
   email = '';
   password = '';

@@ -9,7 +9,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 //Importar los componentes
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LogoutComponent } from './modales/logout/logout.component';
 import { RedesComponent } from './components/menu/redes/redes.component';
 import { AcercademiComponent } from './components/principal/acercademi/acercademi.component';
 import { ExperienciaComponent } from './components/principal/experiencia/experiencia.component';
@@ -23,8 +22,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ErrorComponent } from './components/error/error.component';
 import { IndexComponent } from './components/index/index.component';
 import { NavbarDashboardComponent } from './components/menu/navbar-dashboard/navbar-dashboard.component';
-import { BotonLoginComponent } from './components/menu/boton-login/boton-login.component';
-import { BotonLogoutComponent } from './components/menu/boton-logout/boton-logout.component';
+import { LoginComponent } from './components/menu/login/login.component';
 import { DashboardexperienciaComponent } from './components/dashboard/dashboardexperiencia/dashboardexperiencia.component';
 import { DashboardestudiosComponent } from './components/dashboard/dashboardestudios/dashboardestudios.component';
 import { DashboardproyectosComponent } from './components/dashboard/dashboardproyectos/dashboardproyectos.component';
@@ -36,7 +34,6 @@ import { DashboardpersonaComponent } from './components/dashboard/dashboardperso
 @NgModule({
   declarations: [
     AppComponent,
-    LogoutComponent,
     RedesComponent,
     AcercademiComponent,
     ExperienciaComponent,
@@ -50,8 +47,7 @@ import { DashboardpersonaComponent } from './components/dashboard/dashboardperso
     ErrorComponent,
     IndexComponent,
     NavbarDashboardComponent,
-    BotonLoginComponent,
-    BotonLogoutComponent,
+    LoginComponent,
     DashboardexperienciaComponent,
     DashboardestudiosComponent,
     DashboardproyectosComponent,
