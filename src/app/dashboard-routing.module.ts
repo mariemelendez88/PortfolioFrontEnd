@@ -8,11 +8,13 @@ import { DashboardproyectosComponent } from './components/dashboard/dashboardpro
 import { DashboardredesComponent } from './components/dashboard/dashboardredes/dashboardredes.component';
 import { DashboardreferenciasComponent } from './components/dashboard/dashboardreferencias/dashboardreferencias.component';
 import { DashboardskillsComponent } from './components/dashboard/dashboardskills/dashboardskills.component';
+import { AuthGuard } from './servicios/auth.guard';
 
 const routes: Routes = [
   {
     path: 'dashboard',
     component: DashboardComponent,
+    canActivate:[AuthGuard],
     children:[
       {path: 'dashboardexperiencia', component: DashboardexperienciaComponent},
       {path: 'dashboardestudios', component: DashboardestudiosComponent},

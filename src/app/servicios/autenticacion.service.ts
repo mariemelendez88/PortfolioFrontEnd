@@ -9,12 +9,12 @@ import { HttpClient, HttpHeaders } from "@angular/common/http";
 })
 export class AutenticacionService {
   url = 'http://localhost:8080/login';
-  user: BehaviorSubject<any>;
-  sessionStorage: any;
+  currentUserSubject: BehaviorSubject<any>;
 
 
   constructor(private http:HttpClient) {
-    this.user = new BehaviorSubject<any>(JSON.parse(sessionStorage.getItem('currentUser') || '{}'));
+    console.log("Está corriendo el servicio de autenticación");
+    this.currentUserSubject = new BehaviorSubject<any>(JSON.parse(sessionStorage.getItem('currentUser') || '{}'));
   }
 
   loginUser(credenciales: any): Observable<any> {
@@ -25,10 +25,13 @@ export class AutenticacionService {
     }
     return this.http.post<any>(this.url, credenciales, httpOptions).pipe(map(data => {
       sessionStorage.setItem('currentUser', JSON.stringify(data));
-      this.user.next(data);
+      this.currentUserSubject.next(data);
+      console.log("Servicio esta corriendo" + JSON.stringify(data));
+      return data;
     }));
   }
-  get usuarioLogueado() {
-    return this.user.value;
+  
+  get usuarioAutenticado() {
+    return this.currentUserSubject.value;
   }
 }

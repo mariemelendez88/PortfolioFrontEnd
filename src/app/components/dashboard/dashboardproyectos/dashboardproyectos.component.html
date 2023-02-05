@@ -59,16 +59,16 @@
                 <form [formGroup]="form">
                     <div class="mb-3 row">
                         <label for="formFileSm" class="form-label">Logo</label>
-                        <input type="file" class="form-control" id="logo" name="">
+                        <input type="text" class="form-control" id="logo" formControlName="logo" name="" placeholder="Ej: https://i.ibb.co/XLV8wDW/proyecto-calculator.png">
                     </div>
                     <input type="hidden" name="" id="id">
                     <div class="mb-3 row">
                         <label for="formFileSm" class="form-label">Link del Proyecto</label>
-                        <input type="text" class="form-control" id="link_repo" formControlName="link_repo" name="" placeholder="http://github.com/...">
+                        <input type="text" class="form-control" id="link_repo" formControlName="link_repo" name="" placeholder="Ej: https://github.com/...">
                     </div>
                     <div class="mb-3 row">
                         <label for="formFileSm" class="form-label">Titulo del Proyecto</label>
-                        <input type="text" class="form-control" id="titulo" formControlName="titulo" name="" placeholder="Full Stack Developer, Ingeniero..."
+                        <input type="text" class="form-control" id="titulo" formControlName="titulo" name="" placeholder="Ej: Full Stack Developer, Ingeniero..."
                         [ngClass]="{'is-invalid': TituloInvalido, 'is-valid': TituloValido}">
                         
                         <!-- Se verifica si cumple con el formato -->
@@ -83,7 +83,7 @@
                     </div>
                     <div class="mb-3 row">
                         <label for="formFileSm" class="form-label">Año Fin</label>
-                        <input type="text" class="form-control" id="fin" formControlName="fin" name="" placeholder="2021, Actual, En curso..."
+                        <input type="text" class="form-control" id="fin" formControlName="fin" name="" placeholder="Ej: 2021, No iniciado, En curso..."
                         [ngClass]="{'is-invalid': FinInvalido, 'is-valid': FinValido}">
                         
                         <!-- Se verifica si cumple con el formato -->
@@ -98,8 +98,8 @@
                     </div>
                     <div class="mb-3 row">
                         <label for="formFileSm" class="form-label">Descripción del proyecto</label>
-                        <input type="text" class="form-control" id="descripcion" formControlName="descripcion" name="" placeholder="Describa brevemente el proyecto"
-                        [ngClass]="{'is-invalid': DescripInvalido, 'is-valid': DescripValido}">
+                        <textarea type="text" class="form-control" id="descripcion" formControlName="descripcion" name="" rows="3" placeholder="Describa brevemente el proyecto"
+                        [ngClass]="{'is-invalid': DescripInvalido, 'is-valid': DescripValido}"></textarea>
                         
                         <!-- Se verifica si cumple con el formato -->
                         <div *ngIf="Descrip?.errors && Descrip?.touched">

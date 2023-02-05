@@ -17,7 +17,7 @@
     --bs-list-group-border-color: none;
 }
 /* ...............Inicio de Logout*/
-i.fa-solid.fa-right-from-bracket.fa-xl.text-white:hover{
+i.fa-solid:hover{
     color: #ff0000 !important;
 }
 .list-group-item{

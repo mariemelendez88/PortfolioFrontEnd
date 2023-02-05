@@ -27,4 +27,12 @@
     align-items: left;
     text-align: left;
 }
+.volver{
+    float: right;
+    margin-top: 1rem;
+}
+.nuevo{
+    width: 8rem;
+    margin-top: 1rem;
+}
 /* ...............Fin de Referencias*/

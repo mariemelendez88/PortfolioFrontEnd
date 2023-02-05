@@ -58,11 +58,11 @@
                 <form [formGroup]="form">
                     <div class="mb-3 row">
                         <label for="formFileSm" class="form-label">Logo</label>
-                        <input type="file" class="form-control" id="logo" name="">
+                        <input type="text" class="form-control" id="logo" formControlName="logo" name="" placeholder="Ej: https://i.ibb.co/rGRSB0G/Worley-logo.jpg">
                     </div>
                     <div class="mb-3 row">
                         <label for="formFileSm" class="form-label">Empresa</label>
-                        <input type="text" class="form-control" id="instit" formControlName="instit" name="" placeholder="Globant, Accenture..."
+                        <input type="text" class="form-control" id="instit" formControlName="instit" name="" placeholder="Ej: Globant, Accenture..."
                         [ngClass]="{'is-invalid': InstitInvalido, 'is-valid': InstitValido}">
                         
                         <!-- Se verifica si cumple con el formato -->
@@ -78,11 +78,11 @@
                     <input type="hidden" name="" id="id">
                     <div class="mb-3 row">
                         <label for="formFileSm" class="form-label">Link de la Empresa</label>
-                        <input type="text" class="form-control" id="link_instit" formControlName="link_instit" name="" placeholder="http://website.com">
+                        <input type="text" class="form-control" id="link_instit" formControlName="link_instit" name="" placeholder="Ej: https://website.com">
                     </div>
                     <div class="mb-3 row">
                         <label for="formFileSm" class="form-label">Puesto</label>
-                        <input type="text" class="form-control" id="puesto" formControlName="puesto" name="" placeholder="Developer, Support..."
+                        <input type="text" class="form-control" id="puesto" formControlName="puesto" name="" placeholder="Ej: Developer, Support..."
                         [ngClass]="{'is-invalid': PuestoInvalido, 'is-valid': PuestoValido}">
                         
                         <!-- Se verifica si cumple con el formato -->
@@ -97,7 +97,7 @@
                     </div>
                     <div class="mb-3 row">
                         <label for="formFileSm" class="form-label">Año Inicio</label>
-                        <input type="text" class="form-control" id="inicio" formControlName="inicio" name="" placeholder="2021"
+                        <input type="text" class="form-control" id="inicio" formControlName="inicio" name="" placeholder="Ej: 2021"
                         [ngClass]="{'is-invalid': InicioInvalido, 'is-valid': InicioValido}">
                         
                         <!-- Se verifica si cumple con el formato -->
@@ -112,12 +112,12 @@
                     </div>
                     <div class="mb-3 row">
                         <label for="formFileSm" class="form-label">Año Fin</label>
-                        <input type="text" class="form-control" id="fin" formControlName="fin" name="" placeholder="2021">
+                        <input type="text" class="form-control" id="fin" formControlName="fin" name="" placeholder="Ej: 2021, Actual">
                     </div>
                     <div class="mb-3 row">
                         <label for="formFileSm" class="form-label">Descripción del puesto</label>
-                        <input type="text" class="form-control" id="descripcion" formControlName="descripcion" name="" placeholder="Describa brevemente las funciones del puesto de trabajo"
-                        [ngClass]="{'is-invalid': DescripInvalido, 'is-valid': DescripValido}">
+                        <textarea type="text" class="form-control" id="descripcion" formControlName="descripcion" name="" rows="3" placeholder="Describa brevemente las funciones del puesto de trabajo"
+                        [ngClass]="{'is-invalid': DescripInvalido, 'is-valid': DescripValido}"></textarea>
                         
                         <!-- Se verifica si cumple con el formato -->
                         <div *ngIf="Descrip?.errors && Descrip?.touched">

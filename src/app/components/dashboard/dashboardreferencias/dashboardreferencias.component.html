@@ -53,7 +53,7 @@
                     
                     <div class="mb-3 row">
                         <label for="formFileSm" class="form-label">Nombre</label>
-                        <input type="text" class="form-control" id="nombre" formControlName="nombre" name="" placeholder="Juan, Lucia..."
+                        <input type="text" class="form-control" id="nombre" formControlName="nombre" name="" placeholder="Ej: Juan, Lucia..."
                         [ngClass]="{'is-invalid': NombreInvalido, 'is-valid': NombreValido}">
                         
                         <!-- Se verifica si cumple con el formato -->
@@ -68,7 +68,7 @@
                     </div>
                     <div class="mb-3 row">
                         <label for="formFileSm" class="form-label">Apellido</label>
-                        <input type="text" class="form-control" id="apellido" formControlName="apellido" name="" placeholder="Perez, Diaz Lugo..."
+                        <input type="text" class="form-control" id="apellido" formControlName="apellido" name="" placeholder="Ej: Perez, Diaz Lugo..."
                         [ngClass]="{'is-invalid': ApellidoInvalido, 'is-valid': ApellidoValido}">
                         
                         <!-- Se verifica si cumple con el formato -->
@@ -84,11 +84,11 @@
                     <input type="hidden" name="" id="id">
                     <div class="mb-3 row">
                         <label for="formFileSm" class="form-label">Teléfono</label>
-                        <input type="text" class="form-control" id="telefono" formControlName="telefono" name="" placeholder="+54 9 11 0000-0000">
+                        <input type="text" class="form-control" id="telefono" formControlName="telefono" name="" placeholder="Ej: +54 9 11 0000-0000">
                     </div>
                     <div class="mb-3 row">
                         <label for="formFileSm" class="form-label">Email</label>
-                        <input type="email" class="form-control" id="email" formControlName="email" name="" placeholder="email@dominio.com"
+                        <input type="email" class="form-control" id="email" formControlName="email" name="" placeholder="Ej: email@dominio.com"
                         [ngClass]="{'is-invalid': EmailInvalido, 'is-valid': EmailValido}">
                         
                         <!-- Se verifica si cumple con el formato -->

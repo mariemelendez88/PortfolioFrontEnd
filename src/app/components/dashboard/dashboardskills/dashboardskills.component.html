@@ -145,7 +145,7 @@
                     
                     <div class="mb-3 row">
                         <label for="formFileSm" class="form-label">Tipo (Frontend, Backend, Idioma, Otro)</label>
-                        <input type="text" class="form-control" id="tipo" formControlName="tipo" name="" placeholder="Frontend, Backend, Idioma, Otro"
+                        <input type="text" class="form-control" id="tipo" formControlName="tipo" name="" placeholder="Ej: Frontend, Backend, Idioma, Otro"
                         [ngClass]="{'is-invalid': TipoInvalido, 'is-valid': TipoValido}">
                         
                         <!-- Se verifica si cumple con el formato -->
@@ -160,7 +160,7 @@
                     </div>
                     <div class="mb-3 row">
                         <label for="formFileSm" class="form-label">Habilidad</label>
-                        <input type="text" class="form-control" id="habilidad" formControlName="habilidad" name="" placeholder="HTML, Francés, Liderazgo..."
+                        <input type="text" class="form-control" id="habilidad" formControlName="habilidad" name="" placeholder="Ej: HTML, Francés, Liderazgo..."
                         [ngClass]="{'is-invalid': HabilidadInvalido, 'is-valid': HabilidadValido}">
                         
                         <!-- Se verifica si cumple con el formato -->
@@ -176,11 +176,11 @@
                     <input type="hidden" name="" id="id">
                     <div class="mb-3 row">
                         <label for="formFileSm" class="form-label">Ícono de fontawesome</label>
-                        <input type="text" class="form-control" id="iconskill" formControlName="iconskill" name="" placeholder="http://website.com">
+                        <input type="text" class="form-control" id="iconskill" formControlName="iconskill" name="" placeholder="Ej: fa-solid fa-arrows-split-up-and-left">
                     </div>
                     <div class="mb-3 row">
-                        <label for="formFileSm" class="form-label">Porcentaje</label>
-                        <input type="text" class="form-control" id="porcentaje" formControlName="porcentaje" name="" placeholder="Developer, Support..."
+                        <label for="formFileSm" class="form-label">Porcentaje (sólo indique el número)</label>
+                        <input type="text" class="form-control" id="porcentaje" formControlName="porcentaje" name="" placeholder="Ej: 50, 73, 100..."
                         [ngClass]="{'is-invalid': PorcentajeInvalido, 'is-valid': PorcentajeValido}">
                         
                         <!-- Se verifica si cumple con el formato -->
