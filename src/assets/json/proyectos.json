@@ -1,0 +1,28 @@
+{
+    "proyectos": [
+        {
+            "id":               1,
+            "fin":        2021,
+            "logo":             "/assets/img/proyecto-calculator.png",
+            "link_repo":        "https://github.com/mariemelendez88/vftvk-Simple-Interest-Calculator.git",
+            "titulo":           "Calculadora de interés simple",
+            "descripcion":      "Calculadora de interés simple para computar cálculos sencillos."
+        },
+        {
+            "id":               2,
+            "fin":        2022,
+            "logo":             "/assets/img/proyecto-maquetaHTML.png",
+            "link_repo":        "https://github.com/mariemelendez88/PortFolioEstatico.git",
+            "titulo":           "Portfolio Front End",
+            "descripcion":      "Maquetado de portfolio utilizando HTML, CSS, Bootstrap y Fontawesome."
+        },
+        {
+            "id":               3,
+            "fin":        2022,
+            "logo":             "/assets/img/Proyectos-GoCode.png",
+            "link_repo":        "https://gocode.ar/",
+            "titulo":           "Página Web GoCode",
+            "descripcion":      "Pestaña 'Proyectos' que muestra las websites desarrolladas por GoCode."
+        }
+    ]
+}

@@ -1,0 +1,30 @@
+/* ...............Inicio de Educación*/
+.educacion{
+    width:100%;
+}
+.titulo-edu{
+    background: #ffffff;
+    text-align: center;
+    color: #2fa50b;
+}
+.linea-edu{
+    padding: 1.5rem;
+    color: #3700ff;
+    line-height: 0;
+}
+.caja-edu{
+    width: 90%;
+    margin-left: 5%;
+    align-self: center;
+    height: auto;
+    border: 0.5rem solid #ffffff80;
+    background: #d1cdcd;
+  }
+.logo-edu{
+    align-items: center;
+}
+.texto-edu{
+    align-items: left;
+    text-align: left;
+}
+/* ................Fin de Educación*/

@@ -1,0 +1,158 @@
+<!-- ..............Inicio Seccion Acerca de Mi -->
+<section id="dashboardpersona" class="about mt-5">
+    <div class="container-fluid">
+        <div>
+            <div class="titulo-about">
+                <h1 class="text-center linea-about">PERSONA</h1>
+            </div>
+        </div>
+    </div>
+    <div class="caja-about mt-3 mb-2 row">
+        <div class="text-center mb-3">
+            <button class="btn btn-success boton text-center" (click)="cargarItem()" data-bs-toggle="modal"
+                data-bs-target="#ModalPerfil" title="editar">Editar Persona</button>
+            <button class="btn btn-dark volver" (click)="volver()" title="Volver a Dashboard"><i
+                    class="fa-solid fa-rotate-left"></i></button>
+        </div>
+        <hr>
+        <img [src]="persona.img_banner" class="w-100 img-fluid banner" alt="Imagen de Banner">
+        <div class="container-fluid text-center card-body row">
+            <div class="col-0 col-md-1"></div>
+            <div class="col-12 col-md-3">
+                <img class="rounded-circle img" [src]="persona.img_pfp" alt="foto de perfil">
+                <h1 class="titulo">{{persona.nombre}} {{persona.apellido}}</h1>
+                <h4 class="info">{{persona.titulo}}</h4>
+            </div>
+            <div class="col-12 col-md-8 pt-5">
+                <h2 class="titulo">Acerca de Mi</h2>
+                <h5 class="info">{{persona.acercade}}</h5>
+                <h5 class="info">{{persona.frase}}</h5>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ..............Fin Seccion Acerca de Mi -->
+
+
+<!-- ...............Inicio de Modal para Datos de la Persona -->
+<div class="modal fade" id="ModalPerfil" name="ModalPerfil" tabindex="-1" aria-labelledby="ModalPerfil"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="ModalPerfil">Perfil</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form [formGroup]="form">
+                    <input type="hidden" name="" id="id">
+                    <div class="mb-3 row">
+                        <label for="formFileSm" class="form-label">Imagen de Perfil</label>
+                        <input type="text" class="form-control" id="img_pfp" formControlName="img_pfp" name=""
+                            [ngClass]="{'is-invalid': Img_pfpInvalido, 'is-valid': Img_pfpValido}">
+
+                        <!-- Se verifica si cumple con el formato -->
+                        <div *ngIf="Img_pfp?.errors && Img_pfp?.touched">
+                            <p *ngIf="Img_pfp?.hasError('required')" class="errores">
+                                Campo requerido.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label for="formFileSm" class="form-label">Imagen de Banner</label>
+                        <input type="text" class="form-control" id="img_banner" formControlName="img_banner" name=""
+                            [ngClass]="{'is-invalid': Img_bannerInvalido, 'is-valid': Img_bannerValido}">
+
+                        <!-- Se verifica si cumple con el formato -->
+                        <div *ngIf="Img_banner?.errors && Img_banner?.touched">
+                            <p *ngIf="Img_banner?.hasError('required')" class="errores">
+                                Campo requerido.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label for="formFileSm" class="form-label">Nombre</label>
+                        <input type="text" class="form-control" id="nombre" formControlName="nombre" name=""
+                            [ngClass]="{'is-invalid': NombreInvalido, 'is-valid': NombreValido}">
+
+                        <!-- Se verifica si cumple con el formato -->
+                        <div *ngIf="Nombre?.errors && Nombre?.touched">
+                            <p *ngIf="Nombre?.hasError('required')" class="errores">
+                                Campo requerido.
+                            </p>
+                            <p *ngIf="Nombre?.errors?.['minlength']" class="errores">
+                                Debe ser de 2 o más caracteres.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label for="formFileSm" class="form-label">Apellido</label>
+                        <input type="text" class="form-control" id="apellido" formControlName="apellido" name=""
+                            [ngClass]="{'is-invalid': ApellidoInvalido, 'is-valid': ApellidoValido}">
+
+                        <!-- Se verifica si cumple con el formato -->
+                        <div *ngIf="Apellido?.errors && Apellido?.touched">
+                            <p *ngIf="Apellido?.hasError('required')" class="errores">
+                                Campo requerido.
+                            </p>
+                            <p *ngIf="Apellido?.errors?.['minlength']" class="errores">
+                                Debe ser de 2 o más caracteres.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label for="formFileSm" class="form-label">Titulo</label>
+                        <input type="text" class="form-control" id="titulo" formControlName="titulo" name=""
+                            [ngClass]="{'is-invalid': TituloInvalido, 'is-valid': TituloValido}">
+
+                        <!-- Se verifica si cumple con el formato -->
+                        <div *ngIf="Titulo?.errors && Titulo?.touched">
+                            <p *ngIf="Titulo?.hasError('required')" class="errores">
+                                Campo requerido.
+                            </p>
+                            <p *ngIf="Titulo?.errors?.['minlength']" class="errores">
+                                Debe ser de 2 o más caracteres.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label for="formFileSm" class="form-label">Acerca de...</label>
+                        <textarea type="text" class="form-control" id="acercade" formControlName="acercade" name="" rows="3"
+                            [ngClass]="{'is-invalid': AcercadeInvalido, 'is-valid': AcercadeValido}"></textarea>
+
+                        <!-- Se verifica si cumple con el formato -->
+                        <div *ngIf="Acercade?.errors && Acercade?.touched">
+                            <p *ngIf="Acercade?.hasError('required')" class="errores">
+                                Campo requerido.
+                            </p>
+                            <p *ngIf="Acercade?.errors?.['minlength']" class="errores">
+                                Debe ser de 2 o más caracteres.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label for="formFileSm" class="form-label">Frase</label>
+                        <textarea type="text" class="form-control" id="frase" formControlName="frase" name="" rows="3"
+                            [ngClass]="{'is-invalid': FraseInvalido, 'is-valid': FraseValido}"></textarea>
+
+                        <!-- Se verifica si cumple con el formato -->
+                        <div *ngIf="Frase?.errors && Frase?.touched">
+                            <p *ngIf="Frase?.hasError('required')" class="errores">
+                                Campo requerido.
+                            </p>
+                            <p *ngIf="Frase?.errors?.['minlength']" class="errores">
+                                Debe ser de 2 o más caracteres.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" (click)="guardarItem()" class="btn btn-dark" data-bs-dismiss="modal"
+                            [disabled]="form.invalid">Guardar</button>
+                        <button type="button" (click)="limpiar()" class="btn btn-secondary"
+                            data-bs-dismiss="modal">Volver</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- ...............Fin de Modal para Datos de la Persona -->

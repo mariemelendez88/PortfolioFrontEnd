@@ -1,0 +1,22 @@
+<!-- ..............Inicio Seccion Acerca de Mi -->
+<section id="about">
+    <img [src]="persona.img_banner" class="w-100 img-fluid banner" alt="Imagen de Banner">
+    <div class="container-fluid text-center card-body row">
+        <div class="col-0 col-md-1"></div>
+        <div class="col-12 col-md-3">
+            <img class="rounded-circle img" [src]="persona.img_pfp" alt="foto de perfil">
+            <h1 class="titulo">{{persona.nombre}} {{persona.apellido}}</h1>
+            <h4 class="info">{{persona.titulo}}</h4>
+        </div>
+            <div class="col-12 col-md-8 pt-5">
+            <h2 class="titulo">Acerca de Mi</h2>
+            <h5 class="info">
+                {{persona.acercade}}
+            </h5>
+            <h5 class="info">
+                {{persona.frase}}
+            </h5>
+        </div>
+    </div>   
+</section>
+<!-- ..............Fin Seccion Acerca de Mi -->     

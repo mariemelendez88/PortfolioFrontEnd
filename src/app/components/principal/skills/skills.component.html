@@ -1,0 +1,77 @@
+<!-- .............Inicio Skills................ -->
+<section id="skills" class="skills mt-5">
+    <div class="container-fluid">
+        <div>
+            <div class="titulo-skill">
+                <h1 class="text-center linea-skill">SKILLS</h1>
+            </div>
+        </div>
+    </div>
+    <ul class="row">
+<!-- ..............FRONTEND -->
+        <div class="col-12 col-md-6 caja-skill mt-3">
+            <h2 class="tit-item-skill mb-3">Frontend</h2> 
+            <div *ngFor="let skill of skills" [ngSwitch]="skill.tipo">
+                <div *ngSwitchCase="'Frontend'">
+                    <li class="item-skill mt-3">
+                        <p><i [ngClass]="skill.iconskill" class="fa-2xl"></i> {{skill.habilidad}}</p>
+                        <div class="progress mb-4 " style="height: 1.5rem">
+                            <div class="progress-bar progress-bar-striped progress-bar-animated skill-frontend" 
+                            role="progressbar" aria-valuemin="0" aria-valuemax="100" 
+                            style="height: 1.5rem" [style.width.%]="skill.porcentaje">{{skill.porcentaje}} %</div>
+                        </div>                
+                    </li>
+                </div>
+            </div>  
+        </div>
+<!-- ..............BACKEND -->
+        <div class="col-12 col-md-6 caja-skill mt-3">
+            <h2 class="tit-item-skill mb-3">Backend</h2>
+            <div *ngFor="let skill of skills" [ngSwitch]="skill.tipo">
+                <div *ngSwitchCase="'Backend'">
+                    <li class="item-skill mt-3">
+                        <p><i [ngClass]="skill.iconskill" class="fa-2xl"></i> {{skill.habilidad}}</p>
+                        <div class="progress mb-4 " style="height: 1.5rem">
+                            <div class="progress-bar progress-bar-striped progress-bar-animated skill-backend" 
+                            role="progressbar" aria-valuemin="0" aria-valuemax="100" 
+                            style="height: 1.5rem" [style.width.%]="skill.porcentaje">{{skill.porcentaje}} %</div>
+                        </div>                
+                    </li>
+                </div>
+            </div>  
+        </div>
+<!-- ..............IDIOMAS -->
+        <div class="col-12 col-md-6 caja-skill mt-3">
+            <h2 class="tit-item-skill mb-3">Idiomas</h2>
+            <div *ngFor="let skill of skills" [ngSwitch]="skill.tipo">
+                <div *ngSwitchCase="'Idioma'">
+                    <li class="item-skill mt-3">
+                        <p><i [ngClass]="skill.iconskill" class="fa-2xl"></i> {{skill.habilidad}}</p>
+                        <div class="progress mb-4 " style="height: 1.5rem">
+                            <div class="progress-bar progress-bar-striped progress-bar-animated skill-idiomas" 
+                            role="progressbar" aria-valuemin="0" aria-valuemax="100" 
+                            style="height: 1.5rem" [style.width.%]="skill.porcentaje">{{skill.porcentaje}} %</div>
+                        </div>                
+                    </li>
+                </div>
+            </div>  
+        </div>
+<!-- ..............OTROS -->
+        <div class="col-12 col-md-6 caja-skill mt-3">
+            <h2 class="tit-item-skill mb-3">Otros</h2>
+            <div *ngFor="let skill of skills" [ngSwitch]="skill.tipo">
+                <div *ngSwitchCase="'Otro'">
+                    <li class="item-skill mt-3">
+                        <p><i [ngClass]="skill.iconskill" class="fa-2xl"></i> {{skill.habilidad}}</p>
+                        <div class="progress mb-4 " style="height: 1.5rem">
+                            <div class="progress-bar progress-bar-striped progress-bar-animated skill-otros" 
+                            role="progressbar" aria-valuemin="0" aria-valuemax="100" 
+                            style="height: 1.5rem" [style.width.%]="skill.porcentaje">{{skill.porcentaje}} %</div>
+                        </div>                
+                    </li>
+                </div>
+            </div>  
+        </div>
+    </ul>
+<!-- ..............Fin Skills.................. -->
+</section>

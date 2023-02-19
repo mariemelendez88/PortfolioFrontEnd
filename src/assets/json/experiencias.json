@@ -1,0 +1,34 @@
+{
+    "experiencias": [
+        {
+            "id":          1,
+            "inicio":      2013,
+            "fin":         2017,
+            "link_instit": "http://www.usb.ve/",
+            "logo":        "/assets/img/USB-logo.png",
+            "instit":      "Universidad Simón Bolívar",
+            "puesto":      "Profesor",
+            "descripcion": "Profesor de materias teóricas y prácticas de Ingeniería Eléctrica."
+        },
+        {
+            "id":          2,
+            "inicio":      2019,
+            "fin":         "Actual",
+            "link_instit": "https://www.worley.com/",
+            "logo":        "/assets/img/Worley-logo.png",
+            "instit":      "Worley",
+            "puesto":      "Senior Electrical Engineer",
+            "descripcion": "Planificación, diseño, ejecución y supervisión de proyectos de ingeniería eléctrica."
+        },
+        {
+            "id":          3,
+            "inicio":      2022,
+            "fin":         "Actual",
+            "logo":        "/assets/img/gocode.png",
+            "link_instit": "https://gocode.ar/",
+            "instit":      "GoCode Argentina",
+            "puesto":      "Full Stack Developer/ Scrum Master",
+            "descripcion": "Trabajo en equipo para poner en práctica conocimientos de programación."
+        }
+    ]
+}

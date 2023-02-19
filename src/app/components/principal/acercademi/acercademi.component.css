@@ -1,0 +1,32 @@
+/* ...............Inicio de Acerca de Mi*/
+.titulo{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    -webkit-text-stroke: 0.1rem #0000ff;
+    color: #ffffff;
+}
+.info{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    -webkit-text-stroke: 0.05rem #ffffff;
+    color: #730989;
+}
+.img{
+    margin-top: -2.5rem;
+    width: 40%;
+}
+.about{
+    margin-top: 10rem;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    margin-bottom: 7.5rem;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+/* ...............Fin de Acerca de Mi*/
+/* ...............Inicio de Banner*/
+.banner{
+    width: 100%;
+    background-size: cover;
+    z-index: 1;
+}
+/* ...............Fin de Banner*/

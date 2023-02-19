@@ -1,0 +1,14 @@
+{
+    "redes": [
+        {
+            "id":       1,
+            "urlred":   "https://github.com/mariemelendez88?tab=repositories",
+            "iconred":  "fa-brands fa-github"
+        },
+        {
+            "id":       2,
+            "urlred":   "https://www.linkedin.com/in/mariemdeveloper/",
+            "iconred":  "fa-brands fa-linkedin"
+        }
+    ]
+}

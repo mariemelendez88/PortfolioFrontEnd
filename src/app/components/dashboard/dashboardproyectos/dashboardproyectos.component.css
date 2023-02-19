@@ -1,0 +1,45 @@
+/* ...............Inicio de Proyectos*/
+.proyectos{
+    width:100%;
+}
+.titulo-proy{
+    background: #ffffff;
+    text-align: center;
+    color: #2fa50b;
+}
+.linea-proy{
+    padding: 1.5rem;
+    color: #3700ff;
+    line-height: 0;
+}
+.img{
+    height: 100rem;
+}
+.card{
+    width: 90%;
+    margin-left: 5%;
+}
+
+.caja-pro{
+    width: 90%;
+    margin-left: 5%;
+    align-self: center;
+    height: auto;
+    border: 0.5rem solid #ffffff80;
+    background: #d1cdcd;
+  }
+  .card-body{
+    padding-top: 1rem;
+  }
+  .nuevo{
+      width: 8rem;
+      margin-top: 1rem;
+  }
+  .volver{
+      float: right;
+      margin-top: 1rem;
+  }
+  ul{
+    padding: 0;
+  }
+/* ................Fin de Proyectos*/

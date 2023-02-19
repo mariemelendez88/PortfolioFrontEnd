@@ -1,0 +1,24 @@
+{
+    "estudios": [
+        {
+            "id":          1, 
+            "inicio":      2006,
+            "fin":         2013,
+            "link_instit": "https://www.usb.ve/",
+            "logo":        "/assets/img/USB-logo.png",
+            "instit":      "Universidad Simón Bolívar",
+            "titulo":      "Ingeniero Electricista",
+            "descripcion": "Sistemas de Potencia, Máquinas Eléctricas"
+        },
+        {
+            "id":          2,
+            "inicio":      2022,
+            "fin":         2023,
+            "logo":        "/assets/img/Argentina-Programa.png",
+            "link_instit": "https://argentinaprograma.inti.gob.ar/",
+            "instit":      "Argentina Programa - #YoProgramo",
+            "titulo":      "Full Stack Developer",
+            "descripcion": "Programa de Estudio Digital de programación de páginas web incluyendo frontend y backend."
+        }
+    ]
+}

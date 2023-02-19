@@ -1,0 +1,38 @@
+/* ...............Inicio de Referencias*/
+.caja-ref{
+    align-self: center;
+    border: 0.5rem solid #ffffff80;
+    background: #d1cdcd;
+    padding-right: 0!important;
+    padding-left: 0!important;
+  }
+.referencias{
+    width:100%;
+    align-items: center;
+}
+.titulo-ref{
+    background: #ffffff;
+    text-align: center;
+    color: #2fa50b;
+}
+.linea-ref{
+    padding: 1.5rem;
+    color: #3700ff;
+    line-height: 0;
+}
+.logo-ref{
+    align-items: center;
+}
+.texto-ref{
+    align-items: left;
+    text-align: left;
+}
+.volver{
+    float: right;
+    margin-top: 1rem;
+}
+.nuevo{
+    width: 8rem;
+    margin-top: 1rem;
+}
+/* ...............Fin de Referencias*/

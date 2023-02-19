@@ -1,0 +1,41 @@
+/* ...............Inicio de Estudio*/
+.experiencia{
+    width:100%;
+}
+.titulo-exp{
+    background: #ffffff;
+    text-align: center;
+    color: #2fa50b;
+}
+.linea-exp{
+    padding: 1.5rem;
+    color: #3700ff;
+    line-height: 0;
+}
+.caja-exp{
+    width: 90%;
+    margin-left: 5%;
+    align-self: center;
+    height: auto;
+    border: 0.5rem solid #ffffff80;
+    background: #d1cdcd;
+  }
+.logo-exp{
+    align-items: center;
+}
+.texto-exp{
+    align-items: left;
+    text-align: left;
+}
+.list-group-item{
+    padding: 0.3rem;
+}
+.nuevo{
+    width: 8rem;
+    margin-top: 1rem;
+}
+.volver{
+    float: right;
+    margin-top: 1rem;
+}
+/* ................Fin de Estudio*/
