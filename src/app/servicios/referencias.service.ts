@@ -10,7 +10,8 @@ import { Referencias } from '../entidades/Referencias';
 })
 export class ReferenciasService {
   
-  url = 'http://localhost:8080/referencias';
+  // url = 'http://localhost:8080/referencias';
+  url = 'https://portfoliobackend-ab8p.onrender.com/referencias';
   constructor(private httpClient:HttpClient) { }
 
   public listItems(): Observable<Referencias[]>{
