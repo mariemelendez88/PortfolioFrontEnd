@@ -10,7 +10,8 @@ import { Redes } from '../entidades/Redes';
 })
 export class RedesService {
   //El constructor se hace como private porque solo lo veo yo y el primer http se llama alias
-  url = 'http://localhost:8080/redes';
+  // url = 'http://localhost:8080/redes';
+  url = 'https://portfoliobackend-ab8p.onrender.com/redes';
   constructor(private httpClient:HttpClient) { }
 
   public listItems(): Observable<Redes[]>{

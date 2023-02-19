@@ -9,7 +9,8 @@ import { Experiencias } from '../entidades/Experiencias';
   providedIn: 'root'
 })
 export class ExperienciasService {
-  url = 'http://localhost:8080/experiencias';
+  // url = 'http://localhost:8080/experiencias';
+  url = 'https://portfoliobackend-ab8p.onrender.com/experiencias';
   constructor(private httpClient:HttpClient) { }
 
   public listItems(): Observable<Experiencias[]>{

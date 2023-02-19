@@ -9,7 +9,8 @@ import { Estudios } from '../entidades/Estudios';
   providedIn: 'root'
 })
 export class EstudiosService {
-    url = 'http://localhost:8080/estudios';
+    // url = 'http://localhost:8080/estudios';
+  url = 'https://portfoliobackend-ab8p.onrender.com/estudios';
     constructor(private httpClient:HttpClient) { }
   
     public listItems(): Observable<Estudios[]>{

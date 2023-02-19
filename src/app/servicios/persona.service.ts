@@ -9,7 +9,8 @@ import { Persona } from '../entidades/Persona';
   providedIn: 'root'
 })
 export class PersonaService {
-  url = 'http://localhost:8080/persona';
+  // url = 'http://localhost:8080/persona';
+  url = 'https://portfoliobackend-ab8p.onrender.com/persona';
   constructor(private httpClient:HttpClient) { }
 
   // public listItems(): Observable<Persona[]>{
