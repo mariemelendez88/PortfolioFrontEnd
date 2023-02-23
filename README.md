@@ -69,6 +69,7 @@ Las tecnologías y lenguajes utilizados en el ***frontend*** se listan a continu
 * [TypeScript](https://www.typescriptlang.org/)
 * [Angular](https://angular.io/): Version 14
 * [Firebase](https://firebase.google.com/)
+* [Imgbb](https://imgbb.com/)
 
 
 ## Visualización
@@ -90,6 +91,6 @@ Una vez terminado de usar el dashboard, hacer click en el **logout** en la parte
 
 **A mi mom y mi familia** que me han apoyado, y siempre están a mi lado en todo lo que hago! Gracias ma
 
-**A ProgramaTK** gracias Gaby, Cintia, Heber, Migue... Me llevo gratos recuerdos porque no fue posible sin los meets de los martes y jueves.
+**A ProgramaTK** gracias Gaby, Cintia, Heber, Migue, Karin, Celi... Me llevo gratos recuerdos porque no fue posible sin los meets de los martes y jueves más el super express.
 
 **A todas...** aquellas personas que estuvieron en este camino.
