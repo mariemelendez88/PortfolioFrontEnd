@@ -67,6 +67,8 @@ Las tecnologías y lenguajes utilizados en el ***frontend*** se listan a continu
 * [CSS3](https://developer.mozilla.org/es/docs/Web/CSS)
 * [Bootstrap](https://getbootstrap.com/docs/5.0/getting-started/introduction/): Version 5.0
 * [TypeScript](https://www.typescriptlang.org/)
+* [Angular](https://angular.io/): Version 14
+* [Firebase](https://firebase.google.com/)
 
 
 ## Visualización
