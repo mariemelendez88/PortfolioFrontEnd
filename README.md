@@ -1,14 +1,19 @@
-## Table of Contents
-1. [General Info](#general-info)
-2. [Technologies](#technologies)
-3. [Installation](#installation)
-4. [Collaboration](#collaboration)
+#Proyecto Integrador Portgolio Web FrontEnd
+## Tabla de contenidos
+1. [Resumen](#resumen)
+2. [Tecnologías usadas](#tecnologias)
+3. [Instalación](#instalacion)
+4. [Collaboration](#collaboracion)
 5. [FAQs](#faqs)
-### General Info
+### Resumen
 ***
+Proyecto integrador que muestra una aplicación full stack incluyendo: datos personales, estudios cursados, experiencia laboral, conocimiento de las tecnologías y mucho más.
+
+
+Este repositorio
 Write down the general informations of your project. It is worth to always put a project status in the Readme file. This is where you can add it. 
 ### Screenshot
-![Image text](https://www.united-internet.de/fileadmin/user_upload/Brands/Downloads/Logo_IONOS_by.jpg)
+![Image text](https://i.ibb.co/LYPRjwG/Arquitectura.png)
 ## Technologies
 ***
 A list of technologies used within the project:
