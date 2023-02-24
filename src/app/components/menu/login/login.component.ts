@@ -6,6 +6,7 @@ import { HttpHeaders } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { Persona } from 'src/app/entidades/Persona';
 
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
